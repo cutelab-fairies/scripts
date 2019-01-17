@@ -50,6 +50,11 @@ var content = {
 			fontFamily: "'Dudu Caligraphy', 'Roboto', sans-serif",
 			avatars: [
 				{
+					name: "elaine",
+					thumbnail: "avatars/cutelab/elaine.jpg",
+					url: "https://hotmilk.space/cutelab/elaine.fst"
+				},
+				{
 					name: "cirno",
 					thumbnail: "avatars/cutelab/cirno.jpg",
 					url: "https://hotmilk.space/cutelab/cirno.fst"
