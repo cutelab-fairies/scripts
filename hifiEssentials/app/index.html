@@ -18,6 +18,7 @@
 			<div id="avatars" style="display: none;"></div>
 			<div id="worlds" style="display: none; margin: -10px; height: calc(100vh - 50px); margin-bottom: -60px;"></div>
 			<div id="scripts" style="display: none;"></div>
+			<div id="entities" style="display: none;"></div>
 			<div id="settings" style="display: none; margin: 10px;">
 				<h1>avatar</h1>
 				<br>
@@ -162,10 +163,16 @@
 						<h2>apps</h2>
 					</div>
 				</a>
+				<a href="javascript:changePage('entities')">
+					<div id="sidebar-button" class="entities" style="background-color: #ff5722">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4V7zm-1-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
+						<h2>entities</h2>
+					</div>
+				</a>
 				<a href="javascript:changePage('settings')">
 					<div id="sidebar-button" class="settings" style="background-color: #e91e63">
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M15.95 10.78c.03-.25.05-.51.05-.78s-.02-.53-.06-.78l1.69-1.32c.15-.12.19-.34.1-.51l-1.6-2.77c-.1-.18-.31-.24-.49-.18l-1.99.8c-.42-.32-.86-.58-1.35-.78L12 2.34c-.03-.2-.2-.34-.4-.34H8.4c-.2 0-.36.14-.39.34l-.3 2.12c-.49.2-.94.47-1.35.78l-1.99-.8c-.18-.07-.39 0-.49.18l-1.6 2.77c-.1.18-.06.39.1.51l1.69 1.32c-.04.25-.07.52-.07.78s.02.53.06.78L2.37 12.1c-.15.12-.19.34-.1.51l1.6 2.77c.1.18.31.24.49.18l1.99-.8c.42.32.86.58 1.35.78l.3 2.12c.04.2.2.34.4.34h3.2c.2 0 .37-.14.39-.34l.3-2.12c.49-.2.94-.47 1.35-.78l1.99.8c.18.07.39 0 .49-.18l1.6-2.77c.1-.18.06-.39-.1-.51l-1.67-1.32zM10 13c-1.65 0-3-1.35-3-3s1.35-3 3-3 3 1.35 3 3-1.35 3-3 3z"/></svg>
-						<h2>settings</h2>
+						<h2>extra settings</h2>
 					</div>
 				</a>
 				<br>
@@ -247,6 +254,7 @@
 			var pages = [
 				"avatars",
 				"worlds",
+				"entities",
 				"scripts",
 				"settings",
 			]
@@ -330,14 +338,7 @@
 						uuid: uuid,
 					}));
 				}
-
-				function changeAvatar(name, url) {
-					emitEvent("changeAvatar", {
-						name: name,
-						url: url,
-					});
-				}
-
+				
 				function changeSetting(key, value) {
 					emitEvent("changeSetting", {
 						key: key,
@@ -425,7 +426,7 @@
 							el.addEventListener(event, e=>{
 								let sfx = new Audio(sounds[event]);
 								sfx.volume = 0.03;
-								sfx.play();
+								sfx.play().catch(err=>{});
 							});
 						});
 					});

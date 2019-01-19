@@ -249,6 +249,31 @@ var content = {
 		}
 
 	],
+	entities: [
+		{
+			name: "<img src='entities/cute-things.svg' style='height: 50px'/>",
+			fontFamily: "'Dudu Caligraphy', 'Roboto', sans-serif",
+			entities: [
+				{
+					name: "vulpie",
+					thumbnail: "entities/cute-things/vulpie.jpg",
+					properties: {
+						type: "Model",
+						modelURL: "https://maki.cat/hifi/models/vulpie.fbx",
+						name: "Vulpie",
+						lifetime: 3600,
+						collisionless: true,
+						dimensions: {x: 0.1253, y: 0.2068, z: 0.2325},
+						grab: {grabbable: true, grabFollowsController: false},
+					}
+				},
+			]
+		},
+		{
+			name: "<h1>world building</h1>",
+			entities: []
+		}
+	],
 	scripts: [
 		{
 			name: "general",
@@ -312,6 +337,25 @@ var content = {
 	]
 }
 
+function imageSelector(name, thumbnail, fontFamily) {
+	let imageSelector = document.createElement("div");
+	imageSelector.id = "image-selector";
+
+	let imageThumbnail = document.createElement("div");
+	imageThumbnail.id = "image-thumbnail";
+	imageThumbnail.style.backgroundImage = "url("+thumbnail+")";
+
+	let imageName = document.createElement("p");
+	imageName.id = "image-name";
+	imageName.innerHTML = name;
+	if (fontFamily)
+		imageName.style.fontFamily = fontFamily;
+
+	imageSelector.appendChild(imageThumbnail);
+	imageSelector.appendChild(imageName);
+	return imageSelector;
+}
+
 // avatars
 content.avatars.forEach(category=>{
 	let div = document.createElement("div");
@@ -319,37 +363,62 @@ content.avatars.forEach(category=>{
 	category.avatars.forEach(avatar=>{
 		let avatarEl = document.createElement("a");
 		avatarEl.href = "javascript:";
-		avatarEl.addEventListener("click", e=>{
-			changeAvatar(avatar.name, avatar.url);
-		});
-
-		let avatarSelector = document.createElement("div");
-		avatarSelector.id = "avatar-selector";
-
-		let avatarThumbnail = document.createElement("div");
-		avatarThumbnail.id = "avatar-thumbnail";
-		avatarThumbnail.style.backgroundImage = "url("+avatar.thumbnail+")";
-
-		let avatarName = document.createElement("p");
-		avatarName.id = "avatar-name";
-		avatarName.innerHTML = avatar.name;
-		if (category.fontFamily)
-			avatarName.style.fontFamily = category.fontFamily;
-
-		avatarSelector.appendChild(avatarThumbnail);
-		avatarSelector.appendChild(avatarName);
-		avatarEl.appendChild(avatarSelector);
+		avatarEl.addEventListener("click", e=>{ emitEvent("changeAvatar", {name: avatar.name, url: avatar.url}); });
+		avatarEl.appendChild(imageSelector(avatar.name, avatar.thumbnail, category.fontFamily));
 		div.appendChild(avatarEl);
 	});
 
 	document.getElementById("avatars").appendChild(new Collapse(category.name, div));
-}) 
+});
 
-let p = document.createElement("p");
-p.style.margin = "10px";
-p.style.opacity = "0.6";
-p.innerHTML = "New avatars and worlds are being added all the time so check back later to find more!"
-document.getElementById("avatars").appendChild(p);
+let avatarNotice = document.createElement("p");
+avatarNotice.style.margin = "10px";
+avatarNotice.style.opacity = "0.6";
+avatarNotice.innerHTML = "New avatars and worlds are being added all the time so check back later to find more!";
+document.getElementById("avatars").appendChild(avatarNotice);
+
+// entities
+content.entities.forEach(category=>{
+	let div = document.createElement("div");
+
+	category.entities.forEach(entity=>{
+		let entityEl = document.createElement("a");
+		entityEl.href = "javascript:";
+		entityEl.addEventListener("click", e=>{
+			//deleteLastSpawnedEntityAppend();
+			emitEvent("spawnEntity", entity.properties);
+		});
+		entityEl.appendChild(imageSelector(entity.name, entity.thumbnail, category.fontFamily));
+		div.appendChild(entityEl);
+	});
+
+	document.getElementById("entities").appendChild(new Collapse(category.name, div));
+});
+
+let deleteLastSpawnedEntityButton = document.createElement("div");
+deleteLastSpawnedEntityButton.className = "button";
+deleteLastSpawnedEntityButton.style.background = "#ff5722";
+deleteLastSpawnedEntityButton.style.display = "inline-block";
+deleteLastSpawnedEntityButton.style.margin = "10px";
+deleteLastSpawnedEntityButton.style.opacity = "1";
+
+deleteLastSpawnedEntityButton.innerHTML = '<svg class="icon" style="fill:#fff; margin-left: -4px; margin-right: 4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg> attempt to delete the last spawned entity';
+deleteLastSpawnedEntityButton.addEventListener("click", ()=>{
+	emitEvent("deleteLastSpawnedEntity");
+});
+document.getElementById("entities").appendChild(deleteLastSpawnedEntityButton);
+
+let entityNotice = document.createElement("p");
+entityNotice.style.margin = "10px";
+entityNotice.style.opacity = "0.6";
+entityNotice.innerHTML = "This button will likely be removed in the future and replaced with a list of recently spawned items for you to pick from and delete.";
+document.getElementById("entities").appendChild(entityNotice);
+
+// let deleteLastSpawnedEntityButtonAppended = false;
+// function deleteLastSpawnedEntityAppend() {
+// 	if (deleteLastSpawnedEntityButtonAppended) return;
+// 	deleteLastSpawnedEntityButton.style.opacity = "1";
+// }
 
 // worlds
 function shuffle(array) {

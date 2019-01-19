@@ -33,6 +33,31 @@ function emitEvent(key, value) {
 	}));
 }
 
+var lastSpawnedEntities = [];
+
+function spawnEntity(properties) {
+	var position = Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(Quat.cancelOutRollAndPitch(Camera.orientation), {y: 0.3, z: -0.5}));
+	var rotation = Quat.cancelOutRollAndPitch(Camera.orientation);
+
+	properties.position = (properties.position)? Vec3.sum(properties.position, position): position;
+	properties.rotation = (properties.rotation)? Quat.multiply(properties.rotation, rotation): rotation;
+
+	lastSpawnedEntities.push(
+		Entities.addEntity(properties, !(Entities.canRez()||Entities.canRezTmp()))
+	);
+
+	console.log(lastSpawnedEntities);
+}
+
+function deleteLastSpawnedEntity() {
+	var lastEntity = lastSpawnedEntities.splice(-1,1);
+	if (lastEntity.length<1) return;
+
+	console.log(lastEntity);
+
+	Entities.deleteEntity(lastEntity[0]);
+}
+
 function changeSetting(key, value) {
 	var somethingChanged = true;
 
@@ -222,16 +247,24 @@ function webEventReceived(json) {
 				MyAvatar.useFullAvatarURL(json.value.url, json.value.name);
 			}
 		break;
+
+		case "updateSettings": updateSettings(); break;
 		case "changeSetting":
 			if (json.value.key==undefined) break;
 			changeSetting(json.value.key, json.value.value);
 		break;
+		
+		case "updateScripts": updateScripts(); break;
 		case "toggleScript":
 			if (json.value==undefined) break;
 			toggleScript(json.value);
 		break;
-		case "updateSettings": updateSettings(); break;
-		case "updateScripts": updateScripts(); break;
+
+		case "deleteLastSpawnedEntity": deleteLastSpawnedEntity(); break;
+		case "spawnEntity":
+			if (json.value==undefined) break;
+			spawnEntity(json.value);
+		break;
 	}
 }
 
@@ -241,7 +274,6 @@ function buttonClicked() {
 }
 
 // init
-
 function getValueAndChangeSetting(key) {
 	var value = Settings.getValue("cat.maki.hifiEssentials."+key);
 	if (value == undefined) return;
