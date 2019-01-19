@@ -248,7 +248,7 @@ var content = {
 			link: "hifi://tin-land"
 		},
 		{
-			name: Mexico",
+			name: "Mexico",
 			logo: "worlds/mexico-logo.svg",
 			loopOffset:0,
 			background:"worlds/mexico-bg.gif",
