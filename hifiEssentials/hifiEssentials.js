@@ -35,16 +35,32 @@ function emitEvent(key, value) {
 
 var lastSpawnedEntities = [];
 
-function spawnEntity(properties) {
+function spawnEntityJSON(json) {
 	var position = Vec3.sum(MyAvatar.position, Vec3.multiplyQbyV(Quat.cancelOutRollAndPitch(Camera.orientation), {y: 0.3, z: -0.5}));
 	var rotation = Quat.cancelOutRollAndPitch(Camera.orientation);
+	
+	function spawnEntity(entity, parentID) {
+		entity.position = (entity.position)? Vec3.sum(entity.position, position): position;
+		entity.rotation = (entity.rotation)? Quat.multiply(entity.rotation, rotation): rotation;
+		if (parentID) entity.parentID = parentID;
 
-	properties.position = (properties.position)? Vec3.sum(properties.position, position): position;
-	properties.rotation = (properties.rotation)? Quat.multiply(properties.rotation, rotation): rotation;
+		var children = []; 
+		if (entity.children) {
+			children = entity.children;
+			delete entity.children;
+		}
+		
+		var entityID = Entities.addEntity(entity, !(Entities.canRez()||Entities.canRezTmp()))
+		lastSpawnedEntities.push(entityID);
 
-	lastSpawnedEntities.push(
-		Entities.addEntity(properties, !(Entities.canRez()||Entities.canRezTmp()))
-	);
+		children.forEach(function(child) {
+			spawnEntity(child, entityID);
+		});
+	}
+
+	json.forEach(function(entity) {
+		spawnEntity(entity);
+	});
 }
 
 function deleteLastSpawnedEntity() {
@@ -257,9 +273,9 @@ function webEventReceived(json) {
 		break;
 
 		case "deleteLastSpawnedEntity": deleteLastSpawnedEntity(); break;
-		case "spawnEntity":
+		case "spawnEntityJSON":
 			if (json.value==undefined) break;
-			spawnEntity(json.value);
+			spawnEntityJSON(json.value);
 		break;
 	}
 }

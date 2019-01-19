@@ -273,21 +273,91 @@ var content = {
 				{
 					name: "vulpie",
 					thumbnail: "entities/cute-things/vulpie.jpg",
-					properties: {
-						type: "Model",
-						modelURL: "https://maki.cat/hifi/models/vulpie.fbx",
+					json: [{
 						name: "Vulpie",
+						type: "Model",
+						modelURL: "https://scripts.cutelab.space/hifiEssentials/app/entities/vulpie.fbx",
 						lifetime: 3600,
 						collisionless: true,
-						dimensions: {x: 0.1253, y: 0.2068, z: 0.2325},
+						dimensions: {x:0.1253, y:0.2068, z:0.2325},
 						grab: {grabbable: true, grabFollowsController: false},
-					}
+					}],
+				},
+				{
+					name: "hairbrush",
+					thumbnail: "entities/cute-things/hairbrush.jpg",
+					json: [{
+						name: "Hairbrush",
+						type: "Model",
+						modelURL: "https://scripts.cutelab.space/hifiEssentials/app/entities/hairbrush.fbx",
+						script: "https://scripts.cutelab.space/hifiEssentials/app/entities/hairbrush.js",
+						lifetime: 3600,
+						collisionless: true,
+						grab: {grabbable: true, grabFollowsController: false},
+					}],
+				},
+				{
+					name: "fairy yoghurt",
+					thumbnail: "entities/cute-things/fairy-yoghurt.jpg",
+					json: [{
+						name: "Fairy Yoghurt",
+						type: "Model",
+			            modelURL: "https://scripts.cutelab.space/hifiEssentials/app/entities/fairy-yoghurt.fbx",
+			            dimensions: {
+			                x: 0.13340,
+			                y: 0.10590,
+			                z: 0.13340,
+			            },
+						lifetime: 3600,
+						collisionless: true,
+						grab: {grabbable: true, grabFollowsController: false},
+						children: [{
+							name: "Fairy Yoghurt Shader",
+							type: "Shape",
+							shape: "Cylinder",
+							position: {x:0, y:0.02647, z:0},
+							script: "https://scripts.cutelab.space/hifiEssentials/app/entities/fairy-yoghurt.js",
+							dimensions: {
+				                x: 0.12340,
+				                y: 0.001,
+				                z: 0.12340,
+				            },
+							userData: JSON.stringify({
+							 	ProceduralEntity: {
+							 		shaderUrl: "https://scripts.cutelab.space/hifiEssentials/app/entities/fairy-yoghurt.fs",
+							 		version: 2,
+								}
+							}),
+							canCastShadow: false,
+           					collisionless: true,
+            				ignoreForCollisions: true,
+							grab: {grabbable: false, grabFollowsController: false},
+						}]
+					}],
 				},
 			]
 		},
 		{
-			name: "<h1>world building</h1>",
-			entities: []
+			name: "<img src='entities/world-building.svg' style='height: 50px'/>",
+			entities: [
+				{ 
+					name: "Sit Point",
+					thumbnail: "entities/world-building/sit-point.jpg",
+					json: [{ // https://hifi-content.s3.amazonaws.com/Experiences/Releases/marketPlaceItems/sitPoint/2019-01-17_10-05-51/appResources/json/invisibleSitCube.json
+						name: "Sit Point",
+						type: "Box",
+						dimensions: {x:0.2, y:0.2, z:0.2},
+						damping: 0,
+						script: "https://hifi-content.s3.amazonaws.com/Experiences/Releases/marketPlaceItems/sitPoint/2019-01-17_10-05-51/appResources/appData/sitClient.js",
+						serverScripts: "https://hifi-content.s3.amazonaws.com/Experiences/Releases/marketPlaceItems/sitPoint/2019-01-17_10-05-51/appResources/appData/sitServer.js",
+						registrationPoint: {x:0.5, y:1, z:0.5},
+						collisionless: true,
+						ignoreForCollisions: true,
+						alpha: 0,
+						shape: "Cube",
+					}],
+				},
+			]
 		}
 	],
 	scripts: [
@@ -402,7 +472,7 @@ content.entities.forEach(category=>{
 		entityEl.href = "javascript:";
 		entityEl.addEventListener("click", e=>{
 			//deleteLastSpawnedEntityAppend();
-			emitEvent("spawnEntity", entity.properties);
+			emitEvent("spawnEntityJSON", entity.json);
 		});
 		entityEl.appendChild(imageSelector(entity.name, entity.thumbnail, category.fontFamily));
 		div.appendChild(entityEl);
@@ -452,7 +522,6 @@ function shuffle(array) {
 new WorldSelector(document.getElementById("worlds"), shuffle(content.worlds));
 
 // scripts
-
 content.scripts.forEach(category=>{
 	let name = document.createElement("h1");
 	name.innerHTML = category.name;
