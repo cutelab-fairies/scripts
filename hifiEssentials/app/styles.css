@@ -148,11 +148,11 @@ body {
 
 #aaahembarassing {
 	transform-origin: 50% 100%;
-	width: 150px;
+	width: 170px;
 /*	margin-left: 35px;
 	margin-top: calc(100vh - 750px);*/
 	position: absolute; margin: auto;
-	bottom: -10px; left: 80px;
+	bottom: -10px; left: 70px;
 	opacity: 0.4;
 	animation-name: aaahembarassing;
 	animation-duration: 3s;
