@@ -246,6 +246,14 @@ var content = {
 			background:"worlds/tin-land-bg.gif",
 			description: "Home of Big Tin and the only Burbur Kang in High Fidelity!",
 			link: "hifi://tin-land"
+		},
+		{
+			name: "Mexico",
+			logo: "worlds/mexico-logo.svg",
+			loopOffset:0,
+			background:"worlds/mexico-bg.gif",
+			description: "A colorful tribute to Dias de la Muerte!",
+			link: "hifi://mexico"
 		}
 
 	],
