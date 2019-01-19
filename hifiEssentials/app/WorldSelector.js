@@ -79,12 +79,19 @@ function WorldSelector(parent, worlds) {
 				height: (worlds[i].logoHeightOffset)? 120+worlds[i].logoHeightOffset+"px": "120px",
 
 				transform: (i==0)? "translate(0,0)": "translate(0,calc(-100% - "+worlds[i].logoOffset+"))",
-
-				backgroundImage: "url("+worlds[i].logo+")",
-				backgroundSize: "contain",
-				backgroundPosition: "center 0",
-				backgroundRepeat: "no-repeat",
 			});
+
+			if (worlds[i].logo.slice(0,4)=="<svg") {
+				logo.innerHTML = worlds[i].logo;
+			} else {
+				setStyles(logo, {
+					backgroundImage: "url("+worlds[i].logo+")",
+					backgroundSize: "contain",
+					backgroundPosition: "center 0",
+					backgroundRepeat: "no-repeat",
+				})
+			}
+
 			slide.appendChild(logo);
 
 			currentSlides.appendChild(slide) ;

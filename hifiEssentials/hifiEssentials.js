@@ -45,15 +45,11 @@ function spawnEntity(properties) {
 	lastSpawnedEntities.push(
 		Entities.addEntity(properties, !(Entities.canRez()||Entities.canRezTmp()))
 	);
-
-	console.log(lastSpawnedEntities);
 }
 
 function deleteLastSpawnedEntity() {
 	var lastEntity = lastSpawnedEntities.splice(-1,1);
 	if (lastEntity.length<1) return;
-
-	console.log(lastEntity);
 
 	Entities.deleteEntity(lastEntity[0]);
 }
