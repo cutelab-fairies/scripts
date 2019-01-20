@@ -276,7 +276,7 @@ var content = {
 					json: [{
 						name: "Vulpie",
 						type: "Model",
-						modelURL: "https://scripts.cutelab.space/hifiEssentials/app/entities/vulpie.fbx",
+						modelURL: "https://scripts.cutelab.space/hifiEssentials/app/entities/cute-things/vulpie.fbx",
 						lifetime: 3600,
 						collisionless: true,
 						dimensions: {x:0.1253, y:0.2068, z:0.2325},
@@ -289,8 +289,8 @@ var content = {
 					json: [{
 						name: "Hairbrush",
 						type: "Model",
-						modelURL: "https://scripts.cutelab.space/hifiEssentials/app/entities/hairbrush.fbx",
-						script: "https://scripts.cutelab.space/hifiEssentials/app/entities/hairbrush.js",
+						modelURL: "https://scripts.cutelab.space/hifiEssentials/app/entities/cute-things/hairbrush.fbx",
+						script: "https://scripts.cutelab.space/hifiEssentials/app/entities/cute-things/hairbrush.js",
 						lifetime: 3600,
 						collisionless: true,
 						grab: {grabbable: true, grabFollowsController: false},
@@ -302,7 +302,7 @@ var content = {
 					json: [{
 						name: "Fairy Yoghurt",
 						type: "Model",
-			            modelURL: "https://scripts.cutelab.space/hifiEssentials/app/entities/fairy-yoghurt.fbx",
+			            modelURL: "https://scripts.cutelab.space/hifiEssentials/app/entities/cute-things/fairy-yoghurt.fbx",
 			            dimensions: {
 			                x: 0.13340,
 			                y: 0.10590,
@@ -316,7 +316,7 @@ var content = {
 							type: "Shape",
 							shape: "Cylinder",
 							position: {x:0, y:0.02647, z:0},
-							script: "https://scripts.cutelab.space/hifiEssentials/app/entities/fairy-yoghurt.js",
+							script: "https://scripts.cutelab.space/hifiEssentials/app/entities/cute-things/fairy-yoghurt.js",
 							dimensions: {
 				                x: 0.12340,
 				                y: 0.001,
@@ -324,7 +324,7 @@ var content = {
 				            },
 							userData: JSON.stringify({
 							 	ProceduralEntity: {
-							 		shaderUrl: "https://scripts.cutelab.space/hifiEssentials/app/entities/fairy-yoghurt.fs",
+							 		shaderUrl: "https://scripts.cutelab.space/hifiEssentials/app/entities/cute-things/fairy-yoghurt.fs",
 							 		version: 2,
 								}
 							}),
