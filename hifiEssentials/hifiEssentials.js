@@ -63,6 +63,25 @@ function spawnEntityJSON(json) {
 	});
 }
 
+function lockWearables(lock) {
+	Window.location = "file://";
+
+	Script.setTimeout(function() {
+		Entities.findEntities(MyAvatar.position, 5).forEach(function(entityID) {
+			var entity = Entities.getEntityProperties(entityID, ["parentID"]);
+			if (entity.parentID != MyAvatar.sessionUUID) return;
+			
+			Entities.editEntity(entityID, {
+				locked: lock
+			});
+		});
+
+		Script.setTimeout(function() {
+			Window.location.goBack();
+		}, 500);
+	}, 500);
+}
+
 function deleteLastSpawnedEntity() {
 	var lastEntity = lastSpawnedEntities.splice(-1,1);
 	if (lastEntity.length<1) return;
@@ -116,36 +135,8 @@ function changeSetting(key, value) {
 			);
 		break;
 
-		case "disableAntiAliasing":
-			var newDisableAntiAliasing = (value!=undefined)? value: !Settings.getValue("cat.maki.hifiEssentials.disableAntiAliasing");
-			Settings.setValue("cat.maki.hifiEssentials.disableAntiAliasing", newDisableAntiAliasing);
-
-			if (newDisableAntiAliasing) {
-				Render.getConfig("RenderMainView.Antialiasing")["constrainColor"] = false;
-				Render.getConfig("RenderMainView.Antialiasing")["feedbackColor"] = false;
-				Render.getConfig("RenderMainView.Antialiasing")["blend"] = 1;
-				Render.getConfig("RenderMainView.Antialiasing")["sharpen"] = 0;
-				Render.getConfig("RenderMainView.JitterCam").none();
-				
-				Render.getConfig("SecondaryCameraJob.Antialiasing")["constrainColor"] = false;
-				Render.getConfig("SecondaryCameraJob.Antialiasing")["feedbackColor"] = false;
-				Render.getConfig("SecondaryCameraJob.Antialiasing")["blend"] = 1;
-				Render.getConfig("SecondaryCameraJob.Antialiasing")["sharpen"] = 0;
-				Render.getConfig("SecondaryCameraJob.JitterCam").none();
-			} else {
-				Render.getConfig("RenderMainView.Antialiasing")["constrainColor"] = true;
-				Render.getConfig("RenderMainView.Antialiasing")["feedbackColor"] = true;
-				Render.getConfig("RenderMainView.Antialiasing")["blend"] = 0.25;
-				Render.getConfig("RenderMainView.Antialiasing")["sharpen"] = 0.05;
-				Render.getConfig("RenderMainView.JitterCam").play();
-
-				Render.getConfig("SecondaryCameraJob.Antialiasing")["constrainColor"] = true;
-				Render.getConfig("SecondaryCameraJob.Antialiasing")["feedbackColor"] = true;
-				Render.getConfig("SecondaryCameraJob.Antialiasing")["blend"] = 0.25;
-				Render.getConfig("SecondaryCameraJob.Antialiasing")["sharpen"] = 0.05;
-				Render.getConfig("SecondaryCameraJob.JitterCam").play();
-			}
-		break;
+		case "wearablesLock": lockWearables(true); break;
+		case "wearablesUnlock": lockWearables(false); break;
 
 		case "disableTrackingSmoothing":
 			var newDisableTrackingSmoothing = (value!=undefined)? value: !Settings.getValue("cat.maki.hifiEssentials.disableTrackingSmoothing");
@@ -176,6 +167,37 @@ function changeSetting(key, value) {
 				//ScriptDiscoveryService.loadScript(foundScriptLink, false, false, false, true);
 				ScriptDiscoveryService.reloadAllScripts();
 			}, 1000);
+		break;
+
+		case "disableAntiAliasing":
+			var newDisableAntiAliasing = (value!=undefined)? value: !Settings.getValue("cat.maki.hifiEssentials.disableAntiAliasing");
+			Settings.setValue("cat.maki.hifiEssentials.disableAntiAliasing", newDisableAntiAliasing);
+
+			if (newDisableAntiAliasing) {
+				Render.getConfig("RenderMainView.Antialiasing")["constrainColor"] = false;
+				Render.getConfig("RenderMainView.Antialiasing")["feedbackColor"] = false;
+				Render.getConfig("RenderMainView.Antialiasing")["blend"] = 1;
+				Render.getConfig("RenderMainView.Antialiasing")["sharpen"] = 0;
+				Render.getConfig("RenderMainView.JitterCam").none();
+				
+				Render.getConfig("SecondaryCameraJob.Antialiasing")["constrainColor"] = false;
+				Render.getConfig("SecondaryCameraJob.Antialiasing")["feedbackColor"] = false;
+				Render.getConfig("SecondaryCameraJob.Antialiasing")["blend"] = 1;
+				Render.getConfig("SecondaryCameraJob.Antialiasing")["sharpen"] = 0;
+				Render.getConfig("SecondaryCameraJob.JitterCam").none();
+			} else {
+				Render.getConfig("RenderMainView.Antialiasing")["constrainColor"] = true;
+				Render.getConfig("RenderMainView.Antialiasing")["feedbackColor"] = true;
+				Render.getConfig("RenderMainView.Antialiasing")["blend"] = 0.25;
+				Render.getConfig("RenderMainView.Antialiasing")["sharpen"] = 0.05;
+				Render.getConfig("RenderMainView.JitterCam").play();
+
+				Render.getConfig("SecondaryCameraJob.Antialiasing")["constrainColor"] = true;
+				Render.getConfig("SecondaryCameraJob.Antialiasing")["feedbackColor"] = true;
+				Render.getConfig("SecondaryCameraJob.Antialiasing")["blend"] = 0.25;
+				Render.getConfig("SecondaryCameraJob.Antialiasing")["sharpen"] = 0.05;
+				Render.getConfig("SecondaryCameraJob.JitterCam").play();
+			}
 		break;
 
 		default: somethingChanged = false; break;
@@ -230,8 +252,11 @@ function updateSettings(override) {
 		sizeNumber: MyAvatar.scale.toFixed(3),
 		speedNumber: MyAvatar.walkSpeed.toFixed(3),
 
-		disableAntiAliasing: (Settings.getValue("cat.maki.hifiEssentials.disableAntiAliasing"))? true: false,
+		//wearablesLockAllowed: Entities.canAdjustLocks(),
+
 		disableTrackingSmoothing: (Settings.getValue("cat.maki.hifiEssentials.disableTrackingSmoothing"))? true: false,
+		
+		disableAntiAliasing: (Settings.getValue("cat.maki.hifiEssentials.disableAntiAliasing"))? true: false,
 	})
 }
 
