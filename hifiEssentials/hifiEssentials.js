@@ -138,6 +138,11 @@ function changeSetting(key, value) {
 		case "wearablesLock": lockWearables(true); break;
 		case "wearablesUnlock": lockWearables(false); break;
 
+		case "displayName":
+			if (!value) break;
+			MyAvatar.displayName = value;
+		break;
+
 		case "disableTrackingSmoothing":
 			var newDisableTrackingSmoothing = (value!=undefined)? value: !Settings.getValue("cat.maki.hifiEssentials.disableTrackingSmoothing");
 			Settings.setValue("cat.maki.hifiEssentials.disableTrackingSmoothing", newDisableTrackingSmoothing);
@@ -252,7 +257,7 @@ function updateSettings(override) {
 		sizeNumber: MyAvatar.scale.toFixed(3),
 		speedNumber: MyAvatar.walkSpeed.toFixed(3),
 
-		//wearablesLockAllowed: Entities.canAdjustLocks(),
+		displayName: MyAvatar.displayName,
 
 		disableTrackingSmoothing: (Settings.getValue("cat.maki.hifiEssentials.disableTrackingSmoothing"))? true: false,
 		

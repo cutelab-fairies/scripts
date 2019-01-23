@@ -316,6 +316,7 @@ body {
 	color: #fff;
 }
 
+input[type="text"],
 input[type="number"] {
 	height: 24px;
 	border: solid 2px #e91e63;
