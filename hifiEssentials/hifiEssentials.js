@@ -64,9 +64,7 @@ function spawnEntityJSON(json) {
 }
 
 function lockWearables(lock) {
-	Window.location = "file://";
-
-	Script.setTimeout(function() {
+	function actuallyLockWearables(lock) {
 		Entities.findEntities(MyAvatar.position, 5).forEach(function(entityID) {
 			var entity = Entities.getEntityProperties(entityID, ["parentID"]);
 			if (entity.parentID != MyAvatar.sessionUUID) return;
@@ -75,11 +73,17 @@ function lockWearables(lock) {
 				locked: lock
 			});
 		});
+	}
 
+	if (Entities.canAdjustLocks()) {
+		actuallyLockWearables(lock);
+	} else {
+		Window.location = "file://";
 		Script.setTimeout(function() {
-			Window.location.goBack();
+			actuallyLockWearables(lock);
+			Script.setTimeout(function() {Window.location.goBack()}, 500);
 		}, 500);
-	}, 500);
+	}
 }
 
 function deleteLastSpawnedEntity() {
