@@ -52,7 +52,7 @@ var content = {
 				{
 					name: "lumpy space princess",
 					thumbnail: "avatars/cutelab/lsp.jpg",
-					url: "https://scripts.cutelab.space/hifiEssentials/app/avatars/cutelab/lsp.fst"
+					url: "https://hifi.maki.cat/avatars/lsp.fst"
 				},
 				{
 					name: "elaine",
