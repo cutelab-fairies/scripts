@@ -364,6 +364,7 @@ var content = {
 						ignoreForCollisions: true,
 						alpha: 0,
 						shape: "Cube",
+						grab: {grabbable: false, grabFollowsController: false},
 					}],
 				},
 			]
