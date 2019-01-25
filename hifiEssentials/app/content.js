@@ -50,6 +50,11 @@ var content = {
 			fontFamily: "'Dudu Caligraphy', 'Roboto', sans-serif",
 			avatars: [
 				{
+					name: "lumpy space princess",
+					thumbnail: "avatars/cutelab/lsp.jpg",
+					url: "https://scripts.cutelab.space/hifiEssentials/app/avatars/cutelab/lsp.fst"
+				},
+				{
 					name: "elaine",
 					thumbnail: "avatars/cutelab/elaine.jpg",
 					url: "https://hotmilk.space/cutelab/elaine.fst"
@@ -151,6 +156,11 @@ var content = {
 			fontFamily: "'Comic Sans MS', 'Roboto', sans-serif",
 			avatars: [
 				{
+					name: "kanna",
+					thumbnail: "avatars/memes/kanna.jpg",
+					url: "https://hotmilk.space/memes/kanna.fst"
+				},
+				{
 					name: "big chungus",
 					thumbnail: "avatars/memes/chungus.jpg",
 					url: "https://hotmilk.space/memes/chungus.fst"
@@ -169,8 +179,7 @@ var content = {
 					name: "muscle pooh",
 					thumbnail: "avatars/memes/muscle-pooh.png",
 					url: "https://hotmilk.space/memes/muscle-pooh.fst"
-				}
-
+				},
 			],
 		},
 		{
