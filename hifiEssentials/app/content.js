@@ -272,6 +272,14 @@ var content = {
 			description: "The official cute fairy forest built by the cute Cutelab fairies!",
 			link: "hifi://cutelab",
 		},
+		// {
+		// 	name: "Tanks Corner",
+		//	logo: "worlds/tanks-logo.svg",
+		// 	logoOffset: 0,
+		// 	background: "worlds/tanks-bg.gif",
+		// 	description: "Moody cyberpunk hangout in the Metaverse, owned & operated by Tank.",
+		// 	link: "hifi://cutelab",
+		// },
 
 	],
 	entities: [
