@@ -2,11 +2,12 @@
   "DataVersion": 0,
   "Entities": [
     {
-    "id": "{5e46d5d4-1e8a-46ac-9735-ea9813a25eed}",
+    "id": "{d0e44457-b0c7-4c70-8f07-0a27b473e77c}",
     "type": "Model",
-    "created": "2019-01-13T21:35:22Z",
-    "lastEdited": 1547415424587938,
-    "lastEditedBy": "{628f8d81-d0f3-443d-b362-b3730bea43d3}",
+    "lastEdited": 1548890816735587,
+    "name": "_foxEssentials",
+    "locked": true,
+    "userData": "{\"grabbableKey\":{\"grabbable\":false,\"triggerable\":true}}",
     "position": {
         "x": 0,
         "y": -0.25999999046325684,
@@ -23,28 +24,16 @@
         "z": -0.0000152587890625,
         "w": -0.0000152587890625
     },
-    "damping": 0,
-    "restitution": 0,
-    "friction": 0,
-    "density": 100,
-    "script": "https://scripts.cutelab.space/foxEssentials/dist/install.js",
-    "angularDamping": 0,
-    "canCastShadow": false,
-    "collisionless": true,
-    "ignoreForCollisions": true,
-    "userData": "{\"grabbableKey\":{\"grabbable\":false,\"triggerable\":true}}",
-    "name": "_foxEssentials",
-    "modelURL": "https://scripts.cutelab.space/foxEssentials/dist/install.fbx",
-    "animation": {
-        "allowTranslation": false
-    },
-    "parentID": "{abe75236-81c6-4e47-b137-75e46069f37a}",
+    "created": 1548889318752382,
+    "lastEditedBy": "{301335e5-6294-4021-a360-d7828143993b}",
+    "parentID": "{e8c57485-455c-4a1d-83b5-20cd078eaaec}",
     "queryAACube": {
-        "x": 1.7106244564056396,
-        "y": 0.4931585192680359,
-        "z": -13.73280143737793,
+        "x": -4.553759574890137,
+        "y": 0.5564321875572205,
+        "z": 12.080728530883789,
         "scale": 1.1181038618087769
     },
+    "canCastShadow": false,
     "grab": {
         "grabbable": false,
         "grabFollowsController": false,
@@ -62,25 +51,39 @@
             "w": 1
         }
     },
+    "density": 100,
+    "damping": 0,
+    "angularDamping": 0,
+    "restitution": 0,
+    "friction": 0,
+    "collisionless": true,
+    "ignoreForCollisions": true,
+    "script": "https://scripts.cutelab.space/foxEssentials/dist/install.js",
+    "modelURL": "https://scripts.cutelab.space/foxEssentials/dist/install.fbx",
+    "animation": {
+        "allowTranslation": false
+    },
     "clientOnly": false,
     "avatarEntity": false,
-    "localEntity": false
+    "localEntity": false,
+    "faceCamera": false,
+    "isFacingAvatar": false
 },
     {
-    "id": "{057dcbe6-aadc-489c-816c-c87cb25a2c9b}",
+    "id": "{6e0f386d-7bbd-4fe9-9185-0e0c7f77c04a}",
     "type": "Model",
-    "created": "2019-01-13T21:35:22Z",
-    "lastEdited": 1547415420589535,
-    "lastEditedBy": "{628f8d81-d0f3-443d-b362-b3730bea43d3}",
+    "lastEdited": 1548893429567960,
+    "name": "_foxEssentials",
+    "userData": "{\"grabbableKey\":{\"grabbable\":false,\"triggerable\":true}}",
     "position": {
-        "x": 0,
-        "y": 0.2199999988079071,
-        "z": -0.05000000074505806
+        "x": -4.76837158203125e-7,
+        "y": 0.2200000286102295,
+        "z": -0.05000022053718567
     },
     "dimensions": {
-        "x": 1.0700876712799072,
-        "y": 0.18108497560024261,
-        "z": 0.06000000983476639
+        "x": 1.2020219564437866,
+        "y": 0.2171715497970581,
+        "z": 0.06000014767050743
     },
     "rotation": {
         "x": -0.0000152587890625,
@@ -88,33 +91,16 @@
         "z": -0.0000152587890625,
         "w": -0.0000152587890625
     },
-    "damping": 0,
-    "script": "https://scripts.cutelab.space/foxEssentials/dist/install.js",
-    "angularDamping": 0,
-    "canCastShadow": false,
-    "collisionless": true,
-    "ignoreForCollisions": true,
-    "collisionMask": 23,
-    "collidesWith": "static,dynamic,kinematic,otherAvatar,",
-    "userData": "{\"grabbableKey\":{\"grabbable\":false,\"triggerable\":true}}",
-    "name": "_foxEssentials",
-    "modelURL": "https://scripts.cutelab.space/foxEssentials/dist/logo.fbx",
-    "animation": {
-        "url": "https://scripts.cutelab.space/foxEssentials/dist/logo.fbx",
-        "allowTranslation": false,
-        "fps": 60,
-        "currentFrame": 127.52558135986328,
-        "running": true,
-        "firstFrame": 65,
-        "lastFrame": 185
-    },
-    "parentID": "{abe75236-81c6-4e47-b137-75e46069f37a}",
+    "created": 1548889318752468,
+    "lastEditedBy": "{a0eb7ec1-b4d0-4dc3-9b6b-f40da3f1d0b2}",
+    "parentID": "{e8c57485-455c-4a1d-83b5-20cd078eaaec}",
     "queryAACube": {
-        "x": 1.7230424880981445,
-        "y": 0.9887210726737976,
-        "z": -13.687233924865723,
-        "scale": 1.0869587659835815
+        "x": -4.60344934463501,
+        "y": 0.9839944243431091,
+        "z": 11.998236656188965,
+        "scale": 1.222955584526062
     },
+    "canCastShadow": false,
     "grab": {
         "grabbable": false,
         "grabFollowsController": false,
@@ -132,45 +118,56 @@
             "w": 1
         }
     },
+    "damping": 0,
+    "angularDamping": 0,
+    "collisionless": true,
+    "ignoreForCollisions": true,
+    "collisionMask": 23,
+    "collidesWith": "static,dynamic,kinematic,otherAvatar,",
+    "script": "https://scripts.cutelab.space/foxEssentials/dist/install.js",
+    "modelURL": "https://scripts.cutelab.space/foxEssentials/dist/logo.fbx",
+    "animation": {
+        "url": "https://scripts.cutelab.space/foxEssentials/dist/logo.fbx",
+        "allowTranslation": false,
+        "fps": 60,
+        "currentFrame": 90.75285339355469,
+        "running": true,
+        "firstFrame": 65,
+        "lastFrame": 185
+    },
     "clientOnly": false,
     "avatarEntity": false,
-    "localEntity": false
+    "localEntity": false,
+    "faceCamera": false,
+    "isFacingAvatar": false
 },
     {
-    "id": "{abe75236-81c6-4e47-b137-75e46069f37a}",
+    "id": "{e8c57485-455c-4a1d-83b5-20cd078eaaec}",
     "type": "Box",
-    "created": "2019-01-13T21:35:22Z",
-    "lastEdited": 1547415415399569,
-    "lastEditedBy": "{628f8d81-d0f3-443d-b362-b3730bea43d3}",
+    "lastEdited": 1548889370408171,
+    "name": "foxEssentials",
+    "locked": true,
+    "userData": "{\"ProceduralEntity\":{\"shaderUrl\":\"https://scripts.cutelab.space/foxEssentials/dist/shader.fs\",\"version\":2,\"channels\":[\"https://scripts.cutelab.space/foxEssentials/dist/sakura0.png\",\"https://scripts.cutelab.space/foxEssentials/dist/sakura1.png\",\"https://scripts.cutelab.space/foxEssentials/dist/sakura2.png\",\"https://scripts.cutelab.space/foxEssentials/dist/sakura3.png\"]},\"grabbableKey\":{\"grabbable\":false,\"triggerable\":true}}",
     "dimensions": {
         "x": 2,
         "y": 1.5,
         "z": 0.0010000000474974513
     },
     "rotation": {
-        "x": -0.0000457763671875,
-        "y": -0.99859619140625,
-        "z": -0.0001678466796875,
-        "w": -0.053238749504089355
+        "x": -0.0001983642578125,
+        "y": -0.045761823654174805,
+        "z": 0.0000152587890625,
+        "w": 0.998931884765625
     },
-    "damping": 0,
-    "restitution": 0,
-    "friction": 0,
-    "density": 100,
-    "script": "https://scripts.cutelab.space/foxEssentials/dist/install.js",
-    "angularDamping": 0,
-    "canCastShadow": false,
-    "collisionless": true,
-    "ignoreForCollisions": true,
-    "userData": "{\"ProceduralEntity\":{\"shaderUrl\":\"https://scripts.cutelab.space/foxEssentials/dist/shader.fs\",\"version\":2,\"channels\":[\"https://scripts.cutelab.space/foxEssentials/dist/sakura0.png\",\"https://scripts.cutelab.space/foxEssentials/dist/sakura1.png\",\"https://scripts.cutelab.space/foxEssentials/dist/sakura2.png\",\"https://scripts.cutelab.space/foxEssentials/dist/sakura3.png\"]},\"grabbableKey\":{\"grabbable\":false,\"triggerable\":true}}",
-    "name": "foxEssentials",
-    "shape": "Cube",
+    "created": 1548889318752242,
+    "lastEditedBy": "{0375e557-29f8-4f5a-878f-ae77c0ede231}",
     "queryAACube": {
         "x": -1.2500001192092896,
         "y": -1.2500001192092896,
         "z": -1.2500001192092896,
         "scale": 2.500000238418579
     },
+    "canCastShadow": false,
     "grab": {
         "grabbable": false,
         "grabFollowsController": false,
@@ -188,11 +185,22 @@
             "w": 1
         }
     },
+    "density": 100,
+    "damping": 0,
+    "angularDamping": 0,
+    "restitution": 0,
+    "friction": 0,
+    "collisionless": true,
+    "ignoreForCollisions": true,
+    "script": "https://scripts.cutelab.space/foxEssentials/dist/install.js",
+    "shape": "Cube",
     "clientOnly": false,
     "avatarEntity": false,
-    "localEntity": false
+    "localEntity": false,
+    "faceCamera": false,
+    "isFacingAvatar": false
 }
     ],
-  "Id": "{30e6765f-d8e3-4e0f-95c9-c9bbd2452994}",
-  "Version": 98
+  "Id": "{7b70994c-4eaa-4b8b-bf81-148446d7b168}",
+  "Version": 107
 }
