@@ -212,6 +212,14 @@ function changeSetting(key, value) {
 			}
 		break;
 
+		case "enableFilmicToneMapping":
+			var newEnableFilmicToneMapping = (value!=undefined)? value: !Settings.getValue("cat.maki.foxEssentials.enableFilmicToneMapping");
+			Settings.setValue("cat.maki.foxEssentials.enableFilmicToneMapping", newEnableFilmicToneMapping);
+
+			// uses indicies from /scripts/developer/utilities/render/deferredLighting.qml
+			Render.getConfig("RenderMainView.ToneMapping")["curve"] = (newEnableFilmicToneMapping)? 3: 1;
+		break;
+
 		default: somethingChanged = false; break;
 	}
 
@@ -269,6 +277,7 @@ function updateSettings(override) {
 		disableTrackingSmoothing: (Settings.getValue("cat.maki.foxEssentials.disableTrackingSmoothing"))? true: false,
 		
 		disableAntiAliasing: (Settings.getValue("cat.maki.foxEssentials.disableAntiAliasing"))? true: false,
+		enableFilmicToneMapping: (Settings.getValue("cat.maki.foxEssentials.enableFilmicToneMapping"))? true: false,
 	})
 }
 
@@ -331,9 +340,8 @@ function getValueAndChangeSetting(key) {
 
 getValueAndChangeSetting("disableAntiAliasing");
 getValueAndChangeSetting("disableTrackingSmoothing");
-Script.setInterval(function() {
-	getValueAndChangeSetting("collisionsEnabled");
-}, 1000);
+getValueAndChangeSetting("enableFilmicToneMapping");
+//getValueAndChangeSetting("collisionsEnabled");
 
 function collisionsEnabledChanged(enabled) { updateSettings({disableCollisions: !enabled}); }
 function scaleChanged() { updateSettings(); }
