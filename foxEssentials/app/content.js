@@ -441,6 +441,10 @@ var content = {
 			name: "general",
 			scripts: [
 				{
+					name: "<img src='scripts/snailsCustomTags.svg' style='height: 50px'/>",
+					link: "http://cdn.snail.rocks/scripting/customTags/tags.js"
+				},
+				{
 					name: "<img src='scripts/makisNametags.svg' style='height: 30px'/>",
 					link: "https://hifi.maki.cat/client-scripts/makisNametags/makisNametags.js"
 				},
