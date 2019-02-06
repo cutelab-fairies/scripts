@@ -380,7 +380,7 @@
 				setTimeout(()=>{
 					EventBridge.scriptEventReceived.connect(json=>{
 						try { json = JSON.parse(json);
-						} catch(err) {}
+						} catch(err) { return; }
 						if (json.uuid != uuid) return;
 
 						switch (json.key) {
