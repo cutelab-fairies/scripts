@@ -348,12 +348,12 @@ var content = {
 					json: [{
 						name: "Fairy Yoghurt",
 						type: "Model",
-			            modelURL: "https://scripts.cutelab.space/foxEssentials/app/entities/cute-things/fairy-yoghurt.fbx",
-			            dimensions: {
-			                x: 0.13340,
-			                y: 0.10590,
-			                z: 0.13340,
-			            },
+						modelURL: "https://scripts.cutelab.space/foxEssentials/app/entities/cute-things/fairy-yoghurt.fbx",
+						dimensions: {
+							x: 0.13340,
+							y: 0.10590,
+							z: 0.13340,
+						},
 						lifetime: 3600,
 						collisionless: true,
 						grab: {grabbable: true, grabFollowsController: false},
@@ -361,22 +361,22 @@ var content = {
 							name: "Fairy Yoghurt Shader",
 							type: "Shape",
 							shape: "Cylinder",
-							position: {x:0, y:0.02647, z:0},
+							localPosition: {x:0, y:0.02647, z:0},
 							script: "https://scripts.cutelab.space/foxEssentials/app/entities/cute-things/fairy-yoghurt.js",
 							dimensions: {
-				                x: 0.12340,
-				                y: 0.001,
-				                z: 0.12340,
-				            },
+								x: 0.12340,
+								y: 0.001,
+								z: 0.12340,
+							},
 							userData: JSON.stringify({
-							 	ProceduralEntity: {
-							 		shaderUrl: "https://scripts.cutelab.space/foxEssentials/app/entities/cute-things/fairy-yoghurt.fs",
-							 		version: 2,
+								ProceduralEntity: {
+									shaderUrl: "https://scripts.cutelab.space/foxEssentials/app/entities/cute-things/fairy-yoghurt.fs",
+									version: 2,
 								}
 							}),
 							canCastShadow: false,
-           					collisionless: true,
-            				ignoreForCollisions: true,
+							collisionless: true,
+							ignoreForCollisions: true,
 							grab: {grabbable: false, grabFollowsController: false},
 						}]
 					}],
@@ -420,33 +420,33 @@ var content = {
 					thumbnail: "entities/world-building/player-stats.jpg",
 					json: [{
 						type: "Web",
-					    name: "Player Stats (Edit the URL so that it uses your place name)",
-					    dimensions: {x: 2.5, y: 3.5, z: 0.01},
-					    grab: {
-					        grabbable: false,
-					        grabFollowsController: false,
-					    },
-					    damping: 0,
-					    angularDamping: 0,
-					    sourceUrl: "https://maki.cat/hifi-player-stats/cutelab",
-					    dpi: 8,					    
-					    children: [{
+						name: "Player Stats (Edit the URL so that it uses your place name)",
+						dimensions: {x: 2.5, y: 3.5, z: 0.01},
+						grab: {
+							grabbable: false,
+							grabFollowsController: false,
+						},
+						damping: 0,
+						angularDamping: 0,
+						sourceUrl: "https://maki.cat/hifi-player-stats/cutelab",
+						dpi: 8,					    
+						children: [{
 							type: "Box",
-						    visible: false,
-						    name: "_Player Stats (REALLY IMPORTANT CUBE DONT DELETE)",
-						    dimensions: {x: 0.2, y: 0.2, z: 0.2},
-						    canCastShadow: false,
-						    grab: {
-						        grabbable: false,
-						        grabFollowsController: false,
-						    },
-						    damping: 0,
-						    angularDamping: 0,
-						    collisionless: true,
-						    ignoreForCollisions: true,
-						    script: "https://maki.cat/hifi/scripts/hifiPlayerStats.js",
-						    shape: "Cube",    
-					    }]
+							visible: false,
+							name: "_Player Stats (REALLY IMPORTANT CUBE DONT DELETE)",
+							dimensions: {x: 0.2, y: 0.2, z: 0.2},
+							canCastShadow: false,
+							grab: {
+								grabbable: false,
+								grabFollowsController: false,
+							},
+							damping: 0,
+							angularDamping: 0,
+							collisionless: true,
+							ignoreForCollisions: true,
+							script: "https://maki.cat/hifi/scripts/hifiPlayerStats.js",
+							shape: "Cube",    
+						}]
 					}]
 				},
 				{ 
@@ -467,6 +467,80 @@ var content = {
 						grab: {grabbable: false, grabFollowsController: false},
 					}],
 				},
+				{
+					name: "Fox Essentials Installer",
+					thumbnail: "entities/world-building/fox-essentials-installer.jpg",
+					json: [{
+						type: "Box",
+						name: "foxEssentials",
+						userData: "{\"ProceduralEntity\":{\"shaderUrl\":\"https://scripts.cutelab.space/foxEssentials/dist/shader.fs\",\"version\":2,\"channels\":[\"https://scripts.cutelab.space/foxEssentials/dist/sakura0.png\",\"https://scripts.cutelab.space/foxEssentials/dist/sakura1.png\",\"https://scripts.cutelab.space/foxEssentials/dist/sakura2.png\",\"https://scripts.cutelab.space/foxEssentials/dist/sakura3.png\"]},\"grabbableKey\":{\"grabbable\":false,\"triggerable\":true}}",
+						dimensions: {x: 2, y: 1.5, z: 0.001},
+						rotation: {x: 0, y: 1, z: 0, w: 0},
+						canCastShadow: false,
+						grab: {
+							grabbable: false,
+							grabFollowsController: false,
+							triggerable: true,
+						},
+						damping: 0,
+						angularDamping: 0,
+						collisionless: true,
+						ignoreForCollisions: true,
+						script: "https://scripts.cutelab.space/foxEssentials/dist/install.js",
+						shape: "Cube",
+						children: [
+							{
+								type: "Model",
+								name: "_foxEssentials",
+								userData: "{\"grabbableKey\":{\"grabbable\":false,\"triggerable\":true}}",
+								localPosition: {x: 0, y: 0.22, z: -0.05},
+								localRotation: {x: 0, y: 1, z: 0, w: 0},
+								dimensions: {x: 1.2020219564437866, y: 0.2171715497970581, z: 0.06000014767050743},
+								canCastShadow: false,
+								grab: {
+									grabbable: false,
+									grabFollowsController: false,
+									triggerable: true,
+								},
+								damping: 0,
+								angularDamping: 0,
+								collisionless: true,
+								ignoreForCollisions: true,
+								script: "https://scripts.cutelab.space/foxEssentials/dist/install.js",
+								modelURL: "https://scripts.cutelab.space/foxEssentials/dist/logo.fbx",
+								animation: {
+									url: "https://scripts.cutelab.space/foxEssentials/dist/logo.fbx",
+									allowTranslation: false,
+									fps: 60,
+									currentFrame: 65,
+									running: true,
+									firstFrame: 65,
+									lastFrame: 185
+								},
+							},
+							{
+								type: "Model",
+								name: "_foxEssentials",
+								userData: "{\"grabbableKey\":{\"grabbable\":false,\"triggerable\":true}}",
+								localPosition: {x: 0, y: -0.26, z: -0.02},
+								localRotation: {x: 0, y: 1, z: 0, w: 0},
+								dimensions: {x: 1, y: 0.5, z: 0.0125},
+								canCastShadow: false,
+								grab: {
+									grabbable: false,
+									grabFollowsController: false,
+									triggerable: true,
+								},
+								damping: 0,
+								angularDamping: 0,
+								collisionless: true,
+								ignoreForCollisions: true,
+								script: "https://scripts.cutelab.space/foxEssentials/dist/install.js",
+								modelURL: "https://scripts.cutelab.space/foxEssentials/dist/install.fbx",
+							},
+						]
+					}]
+				}
 			]
 		}
 	],

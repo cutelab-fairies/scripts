@@ -43,8 +43,8 @@ function spawnEntityJSON(json) {
 	var rotation = Quat.cancelOutRollAndPitch(Camera.orientation);
 	
 	function spawnEntity(entity, parentID) {
-		entity.position = (entity.position)? Vec3.sum(entity.position, position): position;
-		entity.rotation = (entity.rotation)? Quat.multiply(entity.rotation, rotation): rotation;
+		if (!parentID) entity.position = Vec3.sum(entity.position, position);
+		if (!parentID) entity.rotation = Quat.multiply(entity.rotation, rotation);
 		if (parentID) entity.parentID = parentID;
 
 		var children = []; 
@@ -100,11 +100,18 @@ function changeSetting(key, value) {
 	var somethingChanged = true;
 
 	switch (key) {
-		case "disableCollisions":
-			var newCollisionsEnabled = (value!=undefined)? value: !MyAvatar.getCollisionsEnabled();
-			Settings.setValue("cat.maki.foxEssentials.collisionsEnabled", newCollisionsEnabled);
+		case "disableWorldCollisions":
+			//var newCollisionsEnabled = (value!=undefined)? value: !MyAvatar.getCollisionsEnabled();
+			//Settings.setValue("cat.maki.foxEssentials.collisionsEnabled", newCollisionsEnabled);
 
-			MyAvatar.setCollisionsEnabled(newCollisionsEnabled);
+			MyAvatar.setCollisionsEnabled(!MyAvatar.getCollisionsEnabled());
+			overrideSomethingChanged = true;
+		break;
+		case "disableAvatarCollisions":
+			//var newCollisionsEnabled = (value!=undefined)? value: !MyAvatar.getCollisionsEnabled();
+			//Settings.setValue("cat.maki.foxEssentials.collisionsEnabled", newCollisionsEnabled);
+
+			MyAvatar.setOtherAvatarsCollisionsEnabled(!MyAvatar.getOtherAvatarsCollisionsEnabled());
 			overrideSomethingChanged = true;
 		break;
 		case "enableFlying":
@@ -266,7 +273,8 @@ function toggleScript(script) {
 function updateSettings(override) {
 	if (!override) override = {}
 	emitEvent("updateSettings", {
-		disableCollisions: (override.disableCollisions)? override.disableCollisions: !MyAvatar.getCollisionsEnabled(),
+		disableWorldCollisions: (override.disableWorldCollisions)? override.disableWorldCollisions: !MyAvatar.getCollisionsEnabled(),
+		disableAvatarCollisions: (override.disableAvatarCollisions)? override.disableAvatarCollisions: !MyAvatar.getOtherAvatarsCollisionsEnabled(),
 		enableFlying: MyAvatar.getFlyingEnabled(),
 
 		sizeNumber: MyAvatar.scale.toFixed(3),
@@ -341,13 +349,14 @@ function getValueAndChangeSetting(key) {
 getValueAndChangeSetting("disableAntiAliasing");
 getValueAndChangeSetting("disableTrackingSmoothing");
 getValueAndChangeSetting("enableFilmicToneMapping");
-//getValueAndChangeSetting("collisionsEnabled");
 
-function collisionsEnabledChanged(enabled) { updateSettings({disableCollisions: !enabled}); }
+function collisionsEnabledChanged(enabled) { updateSettings({disableWorldCollisions: !enabled}); }
+function otherAvatarsCollisionsEnabledChanged(enabled) { updateSettings({disableAvatarsCollisions: !enabled}); }
 function scaleChanged() { updateSettings(); }
 function scriptCountChanged() { updateScripts(); }
 
 MyAvatar.collisionsEnabledChanged.connect(collisionsEnabledChanged);
+MyAvatar.otherAvatarsCollisionsEnabledChanged.connect(otherAvatarsCollisionsEnabledChanged);
 MyAvatar.scaleChanged.connect(scaleChanged);
 ScriptDiscoveryService.scriptCountChanged.connect(scriptCountChanged);
 
@@ -356,6 +365,7 @@ button.clicked.connect(buttonClicked);
 
 Script.scriptEnding.connect(function() {
 	MyAvatar.collisionsEnabledChanged.disconnect(collisionsEnabledChanged);
+	MyAvatar.otherAvatarsCollisionsEnabledChanged.disconnect(otherAvatarsCollisionsEnabledChanged);
 	MyAvatar.scaleChanged.disconnect(scaleChanged);
 	ScriptDiscoveryService.scriptCountChanged.disconnect(scriptCountChanged);
 	
