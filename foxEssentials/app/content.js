@@ -415,6 +415,40 @@ var content = {
 						modelURL: "https://hifi.maki.cat/client-entity-scripts/tip-jar/tip-jar.fbx"
 					}]
 				},
+				{
+					name: "Player Stats",
+					thumbnail: "entities/world-building/player-stats.jpg",
+					json: [{
+						type: "Web",
+					    name: "Player Stats (Edit the URL so that it uses your place name)",
+					    dimensions: {x: 2.5, y: 3.5, z: 0.01},
+					    grab: {
+					        grabbable: false,
+					        grabFollowsController: false,
+					    },
+					    damping: 0,
+					    angularDamping: 0,
+					    sourceUrl: "https://maki.cat/hifi-player-stats/cutelab",
+					    dpi: 8,					    
+					    children: [{
+							type: "Box",
+						    visible: false,
+						    name: "_Player Stats (REALLY IMPORTANT CUBE DONT DELETE)",
+						    dimensions: {x: 0.2, y: 0.2, z: 0.2},
+						    canCastShadow: false,
+						    grab: {
+						        grabbable: false,
+						        grabFollowsController: false,
+						    },
+						    damping: 0,
+						    angularDamping: 0,
+						    collisionless: true,
+						    ignoreForCollisions: true,
+						    script: "https://maki.cat/hifi/scripts/hifiPlayerStats.js",
+						    shape: "Cube",    
+					    }]
+					}]
+				},
 				{ 
 					name: "Sit Point",
 					thumbnail: "entities/world-building/sit-point.jpg",
