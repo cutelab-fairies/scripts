@@ -331,12 +331,12 @@ var content = {
 				},
 				{
 					name: "hairbrush",
-					thumbnail: "entities/cute-things/hairbrush.jpg",
+					thumbnail: "entities/cute-things/hairbrush/hairbrush.jpg",
 					json: [{
 						name: "Hairbrush",
 						type: "Model",
-						modelURL: "https://scripts.cutelab.space/foxEssentials/app/entities/cute-things/hairbrush.fbx",
-						script: "https://scripts.cutelab.space/foxEssentials/app/entities/cute-things/hairbrush.js",
+						modelURL: "https://scripts.cutelab.space/foxEssentials/app/entities/cute-things/hairbrush/hairbrush.fbx",
+						script: "https://scripts.cutelab.space/foxEssentials/app/entities/cute-things/hairbrush/hairbrush.js",
 						lifetime: 3600,
 						collisionless: true,
 						grab: {grabbable: true, grabFollowsController: false},
