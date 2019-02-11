@@ -317,6 +317,18 @@ var content = {
 			fontFamily: "'Dudu Caligraphy', 'Roboto', sans-serif",
 			entities: [
 				{
+					name: "lolipop",
+					thumbnail: "",
+					json: [{
+						name: "Lolipop",
+						type: "Model",
+						modelURL: "https://cutelab.space/u/29vNXT.fbx",
+						lifetime: 3600,
+						collisionless: true,
+						grab: {grabbable: true, grabFollowsController: false},
+					}],
+				},
+				{
 					name: "vulpie",
 					thumbnail: "entities/cute-things/vulpie.jpg",
 					json: [{
@@ -549,12 +561,13 @@ var content = {
 			name: "general",
 			scripts: [
 				{
-					name: "<img src='scripts/snailsCustomTags.svg' style='height: 50px'/>",
-					link: "http://cdn.snail.rocks/scripting/customTags/tags.js"
-				},
-				{
 					name: "<img src='scripts/makisNametags.svg' style='height: 30px'/>",
 					link: "https://hifi.maki.cat/client-scripts/makisNametags/makisNametags.js"
+				},
+				{
+					name: "<img src='scripts/snailsCustomTags.svg' style='height: 50px'/>",
+					link: "http://cdn.snail.rocks/scripting/customTags/tags.js",
+					extra: "<span style='color:#f44336; font-weight:700;'>This script might crash your interface!</span>"
 				},
 				{
 					name: "<img src='scripts/portalDropper.svg' style='height: 30px'/>",
@@ -754,6 +767,9 @@ content.scripts.forEach(category=>{
 		tdName.innerHTML = script.name;
 		if (script.author)
 			tdName.innerHTML += "<p style='padding-left: 12px; opacity: 0.7;'>by "+script.author+"</p>";
+
+		if (script.extra) 
+			tdName.innerHTML += "<p style='padding-left: 12px; opacity: 0.7;'>"+script.extra+"</p>";
 
 		tr.appendChild(tdCheckbox);
 		tr.appendChild(tdName);
