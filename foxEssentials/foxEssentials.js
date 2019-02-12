@@ -295,7 +295,7 @@ function updateScripts() {
 
 function webEventReceived(json) {
 	try { json = JSON.parse(json);
-	} catch(err) {}
+	} catch(err) { return; }
 	if (json.uuid != uuid) return;
 
 	switch (json.key) {

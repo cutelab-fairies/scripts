@@ -318,13 +318,14 @@ var content = {
 			entities: [
 				{
 					name: "lolipop",
-					thumbnail: "",
+					thumbnail: "entities/cute-things/lolipop.jpg",
 					json: [{
 						name: "Lolipop",
 						type: "Model",
-						modelURL: "https://cutelab.space/u/29vNXT.fbx",
+						modelURL: "http://maki.cat/hifi/models/lolipop.fbx",
 						lifetime: 3600,
 						collisionless: true,
+						dimensions: {x: 0.398845911026001, y:0.8523820042610168, z:0.06414876878261566,},
 						grab: {grabbable: true, grabFollowsController: false},
 					}],
 				},
@@ -391,6 +392,32 @@ var content = {
 							ignoreForCollisions: true,
 							grab: {grabbable: false, grabFollowsController: false},
 						}]
+					}],
+				},
+				{
+					name: "caitlyn t-pose puppet",
+					thumbnail: "entities/cute-things/caitlyn.jpg",
+					json: [{
+						name: "Maki",
+						type: "Model",
+						modelURL: "https://maki.cat/hifi/avatars/ookatoo/ookatoo.fst",
+						lifetime: 3600,
+						collisionless: true,
+						dimensions: {x: 0.3831223249435425, y: 0.4912702441215515, z: 0.1559317708015442},
+						grab: {grabbable: true, grabFollowsController: false},
+					}],
+				},
+				{
+					name: "maki t-pose puppet",
+					thumbnail: "entities/cute-things/maki.jpg",
+					json: [{
+						name: "Maki",
+						type: "Model",
+						modelURL: "https://maki.cat/hifi/avatars/kyouko/can-you-not.fst",
+						lifetime: 3600,
+						collisionless: true,
+						dimensions: {x: 0.30559247732162476, y: 0.5040512681007385, z: 0.16215521097183228},
+						grab: {grabbable: true, grabFollowsController: false},
 					}],
 				},
 			]
