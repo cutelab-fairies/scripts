@@ -597,6 +597,10 @@ var content = {
 					extra: "<span style='color:#f44336; font-weight:700;'>This script might crash your interface!</span>"
 				},
 				{
+					name: "<img src='scripts/makisPortals.svg' style='height: 70px'/>",
+					link: "https://hifi.maki.cat/client-scripts/makisPortals/makisPortals.js"
+				},
+				{
 					name: "<img src='scripts/portalDropper.svg' style='height: 30px'/>",
 					author: "FluffyJenkins",
 					itemName: "app-portalDropper.js",
