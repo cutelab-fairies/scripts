@@ -437,6 +437,21 @@ var content = {
 				},
 			]
 		},
+		{
+			name: "experimental",
+			scripts: [
+				{
+					name: "<h2>Grab Me</h2>",
+					author: "Maki",
+					link: "https://hifi.maki.cat/client-scripts/grabMe.js"
+				},
+				{
+					name: "<h2>Head Stacker</h2>",
+					author: "Maki",
+					link: "https://hifi.maki.cat/client-scripts/headStacker/headStacker.js"
+				},
+			]
+		}
 	]
 }
 
