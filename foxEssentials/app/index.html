@@ -10,8 +10,8 @@
 	<body>
 		<div id="top-bar">
 			<a href="javascript:openSidebar()"><div id="top-bar-sidebar">
-				<svg style="fill: rgba(29,31,33,0.4); top: 8px; left: 8px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+				<svg style="fill: rgba(29,31,33,0.4); top: 8px; left: 8px;" viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+				<svg viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
 			</div></a><div id="top-bar-text"></div>
 		</div>
 		<div id="content">
@@ -24,21 +24,25 @@
 				<br>
 				<div style="margin-left: 16px;">
 					<table cellspacing="8px">
-						<tr class="pointer" id="settings-disableCollisions">
+						<tr class="pointer" id="settings-disableWorldCollisions">
 							<td class="checkbox"></td>
-							<td><h2 style="margin-left:8px"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.5 6c-2.61.7-5.67 1-8.5 1s-5.89-.3-8.5-1L3 8c1.86.5 4 .83 6 1v13h2v-6h2v6h2V9c2-.17 4.14-.5 6-1l-.5-2zM12 6c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z"/><rect fill="#fff" x="0" y="10.5" width="24" height="4"/><rect x="0" y="11.5" width="24" height="2"/></svg> disable collisions</h2></td>
+							<td><h2 style="margin-left:8px"><svg class="icon" viewBox="0 0 24 24"><path d="M20.5 6c-2.61.7-5.67 1-8.5 1s-5.89-.3-8.5-1L3 8c1.86.5 4 .83 6 1v13h2v-6h2v6h2V9c2-.17 4.14-.5 6-1l-.5-2zM12 6c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z"/><rect fill="#fff" x="0" y="10.5" width="24" height="4"/><rect x="0" y="11.5" width="24" height="2"/></svg> disable world collisions</h2></td>
+						</tr>
+						<tr class="pointer" id="settings-disableAvatarCollisions">
+							<td class="checkbox"></td>
+							<td><h2 style="margin-left:8px"><svg class="icon" viewBox="0 0 24 24"><path transform="translate(-4, 0)" d="M20.5 6c-2.61.7-5.67 1-8.5 1s-5.89-.3-8.5-1L3 8c1.86.5 4 .83 6 1v13h2v-6h2v6h2V9c2-.17 4.14-.5 6-1l-.5-2zM12 6c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z"/><path transform="translate(4, 0)" d="M20.5 6c-2.61.7-5.67 1-8.5 1s-5.89-.3-8.5-1L3 8c1.86.5 4 .83 6 1v13h2v-6h2v6h2V9c2-.17 4.14-.5 6-1l-.5-2zM12 6c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z"/></svg> disable avatar collisions</h2></td>
 						</tr>
 						<tr class="pointer" id="settings-enableFlying">
 							<td class="checkbox"></td>
-							<td><h2 style="margin-left:8px"><!-- <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-linecap="round" stroke-width="1.508" stroke="#000"><path d="M3.541 18.397c4.647.27 7.606-3.24 9.045-5.002M5.28 21.01c4.512-1.048 5.453-2.336 7.306-7.614M12.586 13.396s2.533-1.616 5.003-5.488M9.588 12.798c.338-.265 2.08-2.347 7.006-3.876" fill="none"/><circle cx="18.22" cy="5.2" r="2.221"/></svg> --><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13.127 14.56l1.43-1.43 6.44 6.443L19.57 21zm4.293-5.73l2.86-2.86c-3.95-3.95-10.35-3.96-14.3-.02 3.93-1.3 8.31-.25 11.44 2.88zM5.95 5.98c-3.94 3.95-3.93 10.35.02 14.3l2.86-2.86C5.7 14.29 4.65 9.91 5.95 5.98zm.02-.02l-.01.01c-.38 3.01 1.17 6.88 4.3 10.02l5.73-5.73c-3.13-3.13-7.01-4.68-10.02-4.3z"/><path fill="none" d="M0 0h24v24H0z"/></svg> enable flying/jumping</h2></td>
+							<td><h2 style="margin-left:8px"><!-- <svg class="icon" viewBox="0 0 24 24" stroke-linecap="round" stroke-width="1.508" stroke="#000"><path d="M3.541 18.397c4.647.27 7.606-3.24 9.045-5.002M5.28 21.01c4.512-1.048 5.453-2.336 7.306-7.614M12.586 13.396s2.533-1.616 5.003-5.488M9.588 12.798c.338-.265 2.08-2.347 7.006-3.876" fill="none"/><circle cx="18.22" cy="5.2" r="2.221"/></svg> --><svg class="icon" width="24" height="24" viewBox="0 0 24 24"><path d="M13.127 14.56l1.43-1.43 6.44 6.443L19.57 21zm4.293-5.73l2.86-2.86c-3.95-3.95-10.35-3.96-14.3-.02 3.93-1.3 8.31-.25 11.44 2.88zM5.95 5.98c-3.94 3.95-3.93 10.35.02 14.3l2.86-2.86C5.7 14.29 4.65 9.91 5.95 5.98zm.02-.02l-.01.01c-.38 3.01 1.17 6.88 4.3 10.02l5.73-5.73c-3.13-3.13-7.01-4.68-10.02-4.3z"/><path fill="none" d="M0 0h24v24H0z"/></svg> enable flying/jumping</h2></td>
 						</tr>
 					</table>
 					<br>
 					<h2 style="margin-left: 8px;">size</h2>
 					<table cellspacing="8px">
 						<tr class="pointer">
-							<td class="button" id="settings-sizeBigger"><svg class="icon" style="fill:#fff; margin:0 -4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg> bigger</td>
-							<td class="button" id="settings-sizeSmaller"><svg class="icon" style="fill:#fff; margin:0 -4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 13H5v-2h14v2z"/></svg> smaller</td>
+							<td class="button" id="settings-sizeBigger"><svg class="icon" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg> bigger</td>
+							<td class="button" id="settings-sizeSmaller"><svg class="icon" viewBox="0 0 24 24"><path d="M19 13H5v-2h14v2z"/></svg> smaller</td>
 							<td class="button" id="settings-sizeDefault">1</td>
 							<td><input id="settings-sizeNumber" type="number" style="width: 52px;"/></td>
 						</tr>
@@ -47,8 +51,8 @@
 					<h2 style="margin-left: 8px;">speed</h2>
 					<table cellspacing="8px">
 						<tr class="pointer">
-							<td class="button" id="settings-speedFaster"><svg class="icon" style="fill:#fff; margin:0 -4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg> faster</td>
-							<td class="button" id="settings-speedSlower"><svg class="icon" style="fill:#fff; margin:0 -4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 13H5v-2h14v2z"/></svg> slower</td>
+							<td class="button" id="settings-speedFaster"><svg class="icon" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg> faster</td>
+							<td class="button" id="settings-speedSlower"><svg class="icon" viewBox="0 0 24 24"><path d="M19 13H5v-2h14v2z"/></svg> slower</td>
 							<td class="button" id="settings-speedDefault">2.6</td>
 							<td><input id="settings-speedNumber" type="number" style="width: 52px;"/></td>
 						</tr>
@@ -57,16 +61,16 @@
 					<h2 style="margin-left: 8px;">orientation</h2>
 					<table cellspacing="8px">
 						<tr class="pointer">
-							<td class="button" id="settings-orientation0deg"><svg class="icon" style="fill:#fff; margin:0 -4px; margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"/></svg> 0&deg;</td>
-							<td class="button" id="settings-orientation180deg"><svg class="icon" style="fill:#fff; margin:0 -4px; margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"/></svg> 180&deg;</td>
+							<td class="button" id="settings-orientation0deg"><svg class="icon" viewBox="0 0 24 24"><path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"/></svg> 0&deg;</td>
+							<td class="button" id="settings-orientation180deg"><svg class="icon" viewBox="0 0 24 24"><path d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"/></svg> 180&deg;</td>
 						</tr>
 					</table>
 					<br>
 					<h2 style="margin-left: 8px;">wearables</h2>
 					<table cellspacing="8px">
 						<tr class="pointer">
-							<td class="button" id="settings-wearablesLock"><svg class="icon" style="fill:#fff; margin:0 -4px; margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg> lock</td>
-							<td class="button" id="settings-wearablesUnlock"><svg class="icon" style="fill:#fff; margin:0 -4px; margin-right:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm6-9h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6h1.9c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm0 12H6V10h12v10z"/></svg> unlock</td>
+							<td class="button" id="settings-wearablesLock"><svg class="icon" viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg> lock</td>
+							<td class="button" id="settings-wearablesUnlock"><svg class="icon" viewBox="0 0 24 24"><path d="M12 17c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm6-9h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6h1.9c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm0 12H6V10h12v10z"/></svg> unlock</td>
 						</tr>
 					</table>
 					<br>
@@ -89,12 +93,12 @@
 					<table cellspacing="8px">
 						<tr class="pointer" id="settings-disableTrackingSmoothing">
 							<td class="checkbox"></td>
-							<td><h2 style="margin-left:8px"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4.59 6.89c.7-.71 1.4-1.35 1.71-1.22.5.2 0 1.03-.3 1.52-.25.42-2.86 3.89-2.86 6.31 0 1.28.48 2.34 1.34 2.98.75.56 1.74.73 2.64.46 1.07-.31 1.95-1.4 3.06-2.77 1.21-1.49 2.83-3.44 4.08-3.44 1.63 0 1.65 1.01 1.76 1.79-3.78.64-5.38 3.67-5.38 5.37 0 1.7 1.44 3.09 3.21 3.09 1.63 0 4.29-1.33 4.69-6.1H21v-2.5h-2.47c-.15-1.65-1.09-4.2-4.03-4.2-2.25 0-4.18 1.91-4.94 2.84-.58.73-2.06 2.48-2.29 2.72-.25.3-.68.84-1.11.84-.45 0-.72-.83-.36-1.92.35-1.09 1.4-2.86 1.85-3.52.78-1.14 1.3-1.92 1.3-3.28C8.95 3.69 7.31 3 6.44 3 5.12 3 3.97 4 3.72 4.25c-.36.36-.66.66-.88.93l1.75 1.71zm9.29 11.66c-.31 0-.74-.26-.74-.72 0-.6.73-2.2 2.87-2.76-.3 2.69-1.43 3.48-2.13 3.48z"/></svg> disable tracking smoothing</h2></td>
+							<td><h2 style="margin-left:8px"><svg class="icon" viewBox="0 0 24 24"><path d="M4.59 6.89c.7-.71 1.4-1.35 1.71-1.22.5.2 0 1.03-.3 1.52-.25.42-2.86 3.89-2.86 6.31 0 1.28.48 2.34 1.34 2.98.75.56 1.74.73 2.64.46 1.07-.31 1.95-1.4 3.06-2.77 1.21-1.49 2.83-3.44 4.08-3.44 1.63 0 1.65 1.01 1.76 1.79-3.78.64-5.38 3.67-5.38 5.37 0 1.7 1.44 3.09 3.21 3.09 1.63 0 4.29-1.33 4.69-6.1H21v-2.5h-2.47c-.15-1.65-1.09-4.2-4.03-4.2-2.25 0-4.18 1.91-4.94 2.84-.58.73-2.06 2.48-2.29 2.72-.25.3-.68.84-1.11.84-.45 0-.72-.83-.36-1.92.35-1.09 1.4-2.86 1.85-3.52.78-1.14 1.3-1.92 1.3-3.28C8.95 3.69 7.31 3 6.44 3 5.12 3 3.97 4 3.72 4.25c-.36.36-.66.66-.88.93l1.75 1.71zm9.29 11.66c-.31 0-.74-.26-.74-.72 0-.6.73-2.2 2.87-2.76-.3 2.69-1.43 3.48-2.13 3.48z"/></svg> disable tracking smoothing</h2></td>
 						</tr>
 					</table>
 					<table cellspacing="8px">
 						<tr class="pointer">
-							<td class="button" id="settings-fixPointerPosition"><svg class="icon" style="fill:#fff; margin: 0 -4px; margin-right: 4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg> fix pointer position</td>
+							<td class="button" id="settings-fixPointerPosition"><svg class="icon" 4px;" viewBox="0 0 24 24"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg> fix pointer position</td>
 						</tr>
 					</table>
 				</div>
@@ -105,7 +109,11 @@
 					<table cellspacing="8px">
 						<tr class="pointer" id="settings-disableAntiAliasing">
 							<td class="checkbox"></td>
-							<td><h2 style="margin-left:8px"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 9h2v2h-2zm-2 2h2v2H9zm4 0h2v2h-2zm2-2h2v2h-2zM7 9h2v2H7zm12-6H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 18H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2zm2-7h-2v2h2v2h-2v-2h-2v2h-2v-2h-2v2H9v-2H7v2H5v-2h2v-2H5V5h14v6z"/></svg> disable anti-aliasing</h2></td>
+							<td><h2 style="margin-left:8px"><svg class="icon" viewBox="0 0 24 24"><path d="M11 9h2v2h-2zm-2 2h2v2H9zm4 0h2v2h-2zm2-2h2v2h-2zM7 9h2v2H7zm12-6H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 18H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2zm2-7h-2v2h2v2h-2v-2h-2v2h-2v-2h-2v2H9v-2H7v2H5v-2h2v-2H5V5h14v6z"/></svg> disable anti-aliasing</h2></td>
+						</tr>
+						<tr class="pointer" id="settings-enableFilmicToneMapping">
+							<td class="checkbox"></td>
+							<td><h2 style="margin-left:8px"><svg class="icon" viewBox="0 0 24 24"><path d="M18 4V3c0-.55-.45-1-1-1H5c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1h12c.55 0 1-.45 1-1V6h1v4H9v11c0 .55.45 1 1 1h2c.55 0 1-.45 1-1v-9h8V4h-3z"/></svg> enable filmic tone mapping</h2></td>
 						</tr>
 					</table>
 				</div>
@@ -114,7 +122,8 @@
 				<script type="text/javascript">
 					[
 						// avatar
-						{id:"disableCollisions", event:"click", callback:()=>{changeSetting("disableCollisions")}},
+						{id:"disableWorldCollisions", event:"click", callback:()=>{changeSetting("disableWorldCollisions")}},
+						{id:"disableAvatarCollisions", event:"click", callback:()=>{changeSetting("disableAvatarCollisions")}},
 						{id:"enableFlying", event:"click", callback:()=>{changeSetting("enableFlying")}},
 							// size
 							{id:"sizeSmaller", event:"click", callback:()=>{changeSetting("sizeSmaller")}},
@@ -155,6 +164,7 @@
 						{id:"fixPointerPosition", event:"click", callback:()=>{changeSetting("fixPointerPosition")}},
 						// graphics
 						{id:"disableAntiAliasing", event:"click", callback:()=>{changeSetting("disableAntiAliasing")}},
+						{id:"enableFilmicToneMapping", event:"click", callback:()=>{changeSetting("enableFilmicToneMapping")}},
 					].forEach(setting=>{
 
 						document.getElementById("settings-"+setting.id).addEventListener(setting.event, setting.callback);
@@ -168,41 +178,40 @@
 			<div id="sidebar-background" style="top: 75%; background: linear-gradient(180deg, rgba(29,31,33,0),rgba(29,31,33,1))"></div>
 			<div id="sidebar-content">
 				<img id="logo" src="assets/logo.svg"><br>
-				<img id="cutelab" src="assets/cutelab.svg">
-				<br>
+				<img id="cutelab" src="assets/cutelab.svg"><br>
 				<a href="javascript:changePage('avatars')">
 					<div id="sidebar-button" class="avatars" style="background-color: #00bcd4">
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.5 6c-2.61.7-5.67 1-8.5 1s-5.89-.3-8.5-1L3 8c1.86.5 4 .83 6 1v13h2v-6h2v6h2V9c2-.17 4.14-.5 6-1l-.5-2zM12 6c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z"/></svg>
+						<svg viewBox="0 0 24 24"><path d="M20.5 6c-2.61.7-5.67 1-8.5 1s-5.89-.3-8.5-1L3 8c1.86.5 4 .83 6 1v13h2v-6h2v6h2V9c2-.17 4.14-.5 6-1l-.5-2zM12 6c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z"/></svg>
 						<h2>avatars</h2>
 					</div>
 				</a>
 				<a href="javascript:changePage('worlds')">
 					<div id="sidebar-button" class="worlds" style="background-color: #8bc34a">
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+						<svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
 						<h2>worlds</h2>
 					</div>
 				</a>
 				<a href="javascript:changePage('scripts')">
 					<div id="sidebar-button" class="scripts" style="background-color: #ff9800">
-						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+						<svg width="24" height="24" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
 						<h2>apps</h2>
 					</div>
 				</a>
 				<a href="javascript:changePage('entities')">
 					<div id="sidebar-button" class="entities" style="background-color: #ff5722">
-						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+						<svg width="24" height="24" viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
 						<h2>entities</h2>
 					</div>
 				</a>
 				<a href="javascript:changePage('settings')">
 					<div id="sidebar-button" class="settings" style="background-color: #e91e63">
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M15.95 10.78c.03-.25.05-.51.05-.78s-.02-.53-.06-.78l1.69-1.32c.15-.12.19-.34.1-.51l-1.6-2.77c-.1-.18-.31-.24-.49-.18l-1.99.8c-.42-.32-.86-.58-1.35-.78L12 2.34c-.03-.2-.2-.34-.4-.34H8.4c-.2 0-.36.14-.39.34l-.3 2.12c-.49.2-.94.47-1.35.78l-1.99-.8c-.18-.07-.39 0-.49.18l-1.6 2.77c-.1.18-.06.39.1.51l1.69 1.32c-.04.25-.07.52-.07.78s.02.53.06.78L2.37 12.1c-.15.12-.19.34-.1.51l1.6 2.77c.1.18.31.24.49.18l1.99-.8c.42.32.86.58 1.35.78l.3 2.12c.04.2.2.34.4.34h3.2c.2 0 .37-.14.39-.34l.3-2.12c.49-.2.94-.47 1.35-.78l1.99.8c.18.07.39 0 .49-.18l1.6-2.77c.1-.18.06-.39-.1-.51l-1.67-1.32zM10 13c-1.65 0-3-1.35-3-3s1.35-3 3-3 3 1.35 3 3-1.35 3-3 3z"/></svg>
+						<svg viewBox="0 0 20 20"><path d="M15.95 10.78c.03-.25.05-.51.05-.78s-.02-.53-.06-.78l1.69-1.32c.15-.12.19-.34.1-.51l-1.6-2.77c-.1-.18-.31-.24-.49-.18l-1.99.8c-.42-.32-.86-.58-1.35-.78L12 2.34c-.03-.2-.2-.34-.4-.34H8.4c-.2 0-.36.14-.39.34l-.3 2.12c-.49.2-.94.47-1.35.78l-1.99-.8c-.18-.07-.39 0-.49.18l-1.6 2.77c-.1.18-.06.39.1.51l1.69 1.32c-.04.25-.07.52-.07.78s.02.53.06.78L2.37 12.1c-.15.12-.19.34-.1.51l1.6 2.77c.1.18.31.24.49.18l1.99-.8c.42.32.86.58 1.35.78l.3 2.12c.04.2.2.34.4.34h3.2c.2 0 .37-.14.39-.34l.3-2.12c.49-.2.94-.47 1.35-.78l1.99.8c.18.07.39 0 .49-.18l1.6-2.77c.1-.18.06-.39-.1-.51l-1.67-1.32zM10 13c-1.65 0-3-1.35-3-3s1.35-3 3-3 3 1.35 3 3-1.35 3-3 3z"/></svg>
 						<h2>settings</h2>
 					</div>
 				</a>
 				<br>
 				<div style="opacity: 0.6;">
-					<p><b>Thank you for using our app!</b> <svg style="fill: #f44336" class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></p>
+					<p><b>Thank you for using our app!</b> <svg style="fill: #f44336" class="icon" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></p>
 					<br>
 					<!-- <p>Feel free to send a message to <span style="font-family: 'Roboto Mono', monospace;">Maki#4845</span> on Discord if you have any queries or suggestions!</p> -->
 					<p>Feel free to check out our website for more! <a style="color: #e91e63;" href="https://cutelab.space">https://cutelab.space</a>
@@ -375,14 +384,17 @@
 				setTimeout(()=>{
 					EventBridge.scriptEventReceived.connect(json=>{
 						try { json = JSON.parse(json);
-						} catch(err) {}
+						} catch(err) { return; }
 						if (json.uuid != uuid) return;
 
 						switch (json.key) {
 							case "updateSettings":
 								setClassToEl(
-									document.querySelector("#settings-disableCollisions .checkbox"),
-									"active", json.value.disableCollisions);
+									document.querySelector("#settings-disableWorldCollisions .checkbox"),
+									"active", json.value.disableWorldCollisions);
+								setClassToEl(
+									document.querySelector("#settings-disableAvatarCollisions .checkbox"),
+									"active", json.value.disableAvatarCollisions);
 								setClassToEl(
 									document.querySelector("#settings-enableFlying .checkbox"),
 									"active", json.value.enableFlying);
@@ -393,11 +405,15 @@
 								document.getElementById("settings-displayName").value = json.value.displayName;
 
 								setClassToEl(
+									document.querySelector("#settings-disableTrackingSmoothing .checkbox"),
+									"active", json.value.disableTrackingSmoothing);
+								
+								setClassToEl(
 									document.querySelector("#settings-disableAntiAliasing .checkbox"),
 									"active", json.value.disableAntiAliasing);
 								setClassToEl(
-									document.querySelector("#settings-disableTrackingSmoothing .checkbox"),
-									"active", json.value.disableTrackingSmoothing);
+									document.querySelector("#settings-enableFilmicToneMapping .checkbox"),
+									"active", json.value.enableFilmicToneMapping);
 							break;
 							case "updateScripts":
 								let scriptsEnabled = {};

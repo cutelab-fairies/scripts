@@ -311,7 +311,7 @@ body {
 	height: 24px;
 	border-radius: 8px;
 	background-color: #e91e63;
-	padding: 8px 16px;
+	padding: 8px 10px;
 	font-size: 20px;
 	color: #fff;
 }
@@ -321,7 +321,7 @@ input[type="number"] {
 	height: 24px;
 	border: solid 2px #e91e63;
 	border-radius: 8px;
-	padding: 8px 12px;
+	padding: 6px 10px;
 	font-family: "Roboto", sans-serif;
 	font-size: 20px;
 }
@@ -352,6 +352,7 @@ input[type=number]::-webkit-outer-spin-button {
 	width: 24px; height: 24px;
 	margin-bottom: -5px !important;
 	opacity: 1;
+	fill: #fff;
 }
 
 #settings p br {
