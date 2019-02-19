@@ -1,7 +1,8 @@
 var content = {
 	avatars: [
 		{
-			name: "<img src='avatars/mgf.yuru-yuri.png' style='height: 40px'/>",
+			//name: "<img src='avatars/mgf.yuru-yuri.png' style='height: 40px'/>",
+			name: "<img src='avatars/mgf.png' style='height: 80px'/>",
 			avatars: [
 				{
 					name: "Akari Akaza",
@@ -43,11 +44,11 @@ var content = {
 					thumbnail: "avatars/mgf/yryitm002.jpg",
 					url: "https://hotmilk.space/mgf/yryitm002.fst",
 				},
-			],
-		},
-		{
-			name: "<img src='avatars/mgf.kiniro-mosaic.png' style='height: 40px'/>",
-			avatars: [
+		//	],
+		//},
+		//{
+		//	name: "<img src='avatars/mgf.kiniro-mosaic.png' style='height: 40px'/>",
+		//	avatars: [
 				{
 					name: "Karen Kujou",
 					thumbnail: "avatars/mgf/knkitm001.jpg",
@@ -100,6 +101,14 @@ var content = {
 					url: "https://hotmilk.space/cutelab/kizuna-ai.fst"
 				}
 			]
+		},
+		{
+			name: "<img src='avatars/avatardz.svg' style='height: 35px'/>",
+			address: "hifi://avatardz.space",
+		},
+		{
+			name: "<img src='avatars/subcom.svg' style='height: 40px'/>",
+			address: "hifi://subcom",
 		},
 		// {
 		// 	name: "<img src='avatars/subcom.svg' style='height: 40px'/>",
@@ -236,7 +245,7 @@ var content = {
 		// 	logoOffset: 0,
 		// 	background: "worlds/maki-bg.jpg",
 		// 	description: "A cute domain for cute people who want to make cute things!",
-		// 	link: "hifi://maki",
+		// 	address: "hifi://maki",
 		// },
 		{
 			name: "Portalarium",
@@ -244,7 +253,7 @@ var content = {
 			logoOffset: 20,
 			background: "worlds/portalarium-bg.jpg",
 			description: "A calm, cozy and peaceful camp ground with teleporters.",
-			link: "hifi://portalarium",
+			address: "hifi://portalarium",
 		},
 		{
 			name: "Maker",
@@ -252,7 +261,7 @@ var content = {
 			logoOffset: 0,
 			background: "worlds/maker-bg.jpg",
 			description: "Open sandbox & official gathering spot for the Maker community.",
-			link: "hifi://maker"
+			address: "hifi://maker"
 		},
 		{
 			name: "Solace",
@@ -260,7 +269,7 @@ var content = {
 			logoOffset: 0,
 			background: "worlds/solace-bg.jpg",
 			description: "Worship the light in the black and white. Community managed.",
-			link: "hifi://solace"
+			address: "hifi://solace"
 		},
 		{
 			name: "Astral Gallery",
@@ -268,7 +277,7 @@ var content = {
 			logoOffset: 0,
 			background: "worlds/astral-gallery-bg.gif",
 			description: "Enjoy an immersive psychedelic experience crafted by The Architect.",
-			link: "hifi://astralgallery"
+			address: "hifi://astralgallery"
 		},
 		{
 			name: "Duckpond",
@@ -276,7 +285,7 @@ var content = {
 			loopOffset:0,
 			background:"worlds/duckpond-bg.gif",
 			description: "1029Chris' otherworldly duck pond!",
-			link: "hifi://duckpond"
+			address: "hifi://duckpond"
 		},
 		{
 			name: "Tin-land",
@@ -284,7 +293,7 @@ var content = {
 			loopOffset:0,
 			background:"worlds/tin-land-bg.gif",
 			description: "Home of Big Tin and the only Burbur Kang in High Fidelity!",
-			link: "hifi://tin-land"
+			address: "hifi://tin-land"
 		},
 		{
 			name: "Mexico",
@@ -292,7 +301,7 @@ var content = {
 			loopOffset:0,
 			background:"worlds/mexico-bg.gif",
 			description: "A colorful tribute to Dias de la Muerte!",
-			link: "hifi://mexico"
+			address: "hifi://mexico"
 		},
 		{
 			name: "Cutelab",
@@ -300,7 +309,7 @@ var content = {
 			logoOffset: 0,
 			background: "worlds/cutelab-bg.gif",
 			description: "The official cute fairy forest built by the cute Cutelab fairies!",
-			link: "hifi://cutelab",
+			address: "hifi://cutelab",
 		},
 		{
 			name: "Tanks Corner",
@@ -308,7 +317,7 @@ var content = {
 			logoOffset: 0,
 			background: "worlds/tanks-bg.gif",
 			description: "Moody cyberpunk hangout in the Metaverse, owned & operated by Tank.",
-			link: "hifi://tanks",
+			address: "hifi://tanks",
 		},
 	],
 	entities: [
@@ -691,17 +700,47 @@ function imageSelector(name, thumbnail, fontFamily) {
 
 // avatars
 content.avatars.forEach(category=>{
-	let div = document.createElement("div");
+	if (category.address) {
+		let collapse = document.createElement("div");
+		collapse.id = "collapse";
 
-	category.avatars.forEach(avatar=>{
-		let avatarEl = document.createElement("a");
-		avatarEl.href = "javascript:";
-		avatarEl.addEventListener("click", e=>{ emitEvent("changeAvatar", {name: avatar.name, url: avatar.url}); });
-		avatarEl.appendChild(imageSelector(avatar.name, avatar.thumbnail, category.fontFamily));
-		div.appendChild(avatarEl);
-	});
+		let table = document.createElement("table");
+		let tr = document.createElement("tr");
+		let tdArrow = document.createElement("td");
+		let tdTitle = document.createElement("td");
 
-	document.getElementById("avatars").appendChild(new Collapse(category.name, div));
+		table.style.marginBottom = "16px";
+
+		tdArrow.innerHTML = '<svg style="width: 32px; height: 32px; margin: 8px;" class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>';
+		tdArrow.style.verticalAlign = "middle";
+
+		tdTitle.innerHTML = category.name;
+		tdTitle.style.paddingLeft = "16px";
+		tdTitle.style.verticalAlign = "middle";
+
+		tr.appendChild(tdArrow);
+		tr.appendChild(tdTitle);
+		table.appendChild(tr);
+		collapse.appendChild(table);
+
+		collapse.addEventListener("click", ()=>{
+			window.location = category.address;
+		})
+
+		document.getElementById("avatars").appendChild(collapse);
+	} else {	
+		let div = document.createElement("div");
+
+		category.avatars.forEach(avatar=>{
+			let avatarEl = document.createElement("a");
+			avatarEl.href = "javascript:";
+			avatarEl.addEventListener("click", e=>{ emitEvent("changeAvatar", {name: avatar.name, url: avatar.url}); });
+			avatarEl.appendChild(imageSelector(avatar.name, avatar.thumbnail, category.fontFamily));
+			div.appendChild(avatarEl);
+		});
+
+		document.getElementById("avatars").appendChild(new Collapse(category.name, div));
+	}
 });
 
 let avatarNotice = document.createElement("p");
