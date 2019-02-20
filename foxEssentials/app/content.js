@@ -516,6 +516,32 @@ var content = {
 					}],
 				},
 				{
+					name: "Wearable Avatar",
+					thumbnail: "entities/world-building/wearable-avatar.jpg",
+					json: [{
+						type: "Model",
+						name: "Woody",
+						grab: {
+							grabbable: false,
+							grabFollowsController: false,
+							triggerable: true,
+						},
+						animation: {
+							url: "https://hifi.maki.cat/client-entity-scripts/idle.fbx",
+							allowTranslation: false,
+							loop: true,
+							running: true
+						},
+						collisionless: true,
+						ignoreForCollisions: true,
+						damping: 0,
+						angularDamping: 0,
+						script: "https://hifi.maki.cat/client-entity-scripts/loadAvatar.js",
+						shapeType: "simple-compound",
+						modelURL: "http://mpassets.highfidelity.com/ad348528-de38-420c-82bb-054cb22163f5-v1/mannequin.fst"
+					}]
+				},
+				{
 					name: "Fox Essentials Installer",
 					thumbnail: "entities/world-building/fox-essentials-installer.jpg",
 					json: [{
@@ -587,6 +613,29 @@ var content = {
 								modelURL: "https://scripts.cutelab.space/foxEssentials/dist/install.fbx",
 							},
 						]
+					}]
+				}
+			]
+		},
+		{
+			name: "<img src='entities/shaders.svg' style='height: 50px'/>",
+			entities: [
+				{
+					name: "Portal",
+					thumbnail: "entities/shaders/portal.jpg",
+					json: [{
+						type: "Box",
+						name: "Portal",
+						description: "Make sure that the image is aspect ratio 2:3",
+						userData: "{\"address\":\"hifi://cutelab\",\"ProceduralEntity\":{\"shaderUrl\":\"https://hifi.maki.cat/shaders/portal.fs\",\"channels\":[\"https://fairy-forest.cutelab.space/portals/cutelab.jpg\"],\"version\":2}}",
+						dimensions: {x: 2, y: 3, z: 0.5},
+						grab: {grabbable: false},
+						damping: 0,
+						angularDamping: 0,
+						collisionless: true,
+						ignoreForCollisions: true,
+						script: "https://hifi.maki.cat/client-entity-scripts/portal.js",
+						shape: "Cube",
 					}]
 				}
 			]
