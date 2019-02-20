@@ -627,7 +627,7 @@ var content = {
 						type: "Box",
 						name: "Portal",
 						description: "Make sure that the image is aspect ratio 2:3",
-						userData: "{\"address\":\"hifi://cutelab\",\"ProceduralEntity\":{\"shaderUrl\":\"https://hifi.maki.cat/shaders/portal.fs\",\"channels\":[\"https://fairy-forest.cutelab.space/portals/cutelab.jpg\"],\"version\":2}}",
+						userData: "{\"address\":\"hifi://cutelab\",\"ProceduralEntity\":{\"shaderUrl\":\"https://hifi.maki.cat/shaders/portal.fs\",\"channels\":[\"https://fairy-forest.cutelab.space/portals/cutelab.jpg\"],\"version\":2,\"uniforms\":{\"aspectRatio\":1}}}"
 						dimensions: {x: 2, y: 3, z: 0.5},
 						grab: {grabbable: false},
 						damping: 0,
