@@ -108,88 +108,84 @@ var content = {
 		},
 		{
 			name: "<img src='avatars/subcom.svg' style='height: 40px'/>",
-			address: "hifi://subcom",
+			avatars: [
+				{
+					name: "Daven Atlanta",
+					thumbnail: "avatars/subcom/daven-atlanta.jpg",
+					url: "https://hifi-makers.s3.amazonaws.com/subcom/LittleMouse/HF%20Daven%20Atlanta%20Atlas/HF%20Daven%20Atlanta%20Atlas.fst"
+				},
+				{
+					name: "Witch",
+					thumbnail: "avatars/subcom/witch.jpg",
+					url: "https://hifi-makers.s3.amazonaws.com/subcom/LittleMouse/HF%20-%20Witch/HF%20-%20Witch.fst"
+				},
+				{
+					name: "Gangstar Sleeveless",
+					thumbnail: "avatars/subcom/gangstar-sleeveless.jpg",
+					url: "https://hifi-makers.s3.amazonaws.com/subcom/LittleMouse/HF%20-%20Gangstar%20Sleeveless%20Finger%20Fix/HF%20-%20Gangstar%20Sleeveless%20Finger%20Fix.fst"
+				},
+				{
+					name: "Wolfy",
+					thumbnail: "avatars/subcom/wolfy.jpg",
+					url: "https://hifi-makers.s3.amazonaws.com/subcom/Diviy/Working%20exports%20only/wolfy2/wolfy2.fst"
+				},
+				{
+					name: "Cute Converse",
+					thumbnail: "avatars/subcom/cute-converse.jpg",
+					url: "https://hifi-makers.s3.amazonaws.com/subcom/Diviy/Working%20exports%20only/cute%20convers4/cute%20convers4.fst"
+				},
+				{
+					name: "Wolf Trap Tanooki",
+					thumbnail: "avatars/subcom/wolf-trap-tanooki.jpg",
+					url: "https://hifi-makers.s3.amazonaws.com/subcom/LittleMouse/HF%20Wolf%20Trap%20-%20Tanooki%20atlas%20-%20weight%20painting%20fix/HF%20Wolf%20Trap%20-%20Tanooki%20atlas%20-%20weight%20painting%20fix.fst"
+				},
+				{
+					name: "Emo Wolf Boy",
+					thumbnail: "avatars/subcom/emo-wolf-boy.jpg",
+					url: "https://hifi-makers.s3.amazonaws.com/subcom/LittleMouse/HF%20Emo%20Wolf%20Boy%20Finger%20Fixed/HF%20Emo%20Wolf%20Boy%20Finger%20Fixed.fst"
+				},
+				{
+					name: "Goth Ooka",
+					thumbnail: "avatars/subcom/goth-ooka.jpg",
+					url: "https://hifi-makers.s3.amazonaws.com/subcom/Diviy/Working%20exports%20only/goth%20ooka6/goth%20ooka6.fst"
+				},
+				{
+					name: "Teen Neko",
+					thumbnail: "avatars/subcom/teen-neko.jpg",
+					url: "https://hifi-makers.s3.amazonaws.com/subcom/Diviy/Working%20exports%20only/teen%20neko5/teen%20neko5.fst"
+				},
+				{
+					name: "Headphone Wolfy",
+					thumbnail: "avatars/subcom/headphone-wolfy.jpg",
+					url: "https://hifi-makers.s3.amazonaws.com/subcom/Diviy/Working%20exports%20only/headphone%20wolfy%207/headphone%20wolfy%207.fst"
+				},
+				{
+					name: "Azuma Lim",
+					thumbnail: "avatars/subcom/azuma-lim.jpg",
+					url: "https://hifi-makers.s3.amazonaws.com/subcom/LittleMouse/Azuma%20Lim%20edit%20by%20Subcom%20Finger%20Edit/Azuma%20Lim%20edit%20by%20Subcom%20Finger%20Edit.fst"
+				},
+				{
+					name: "Timbs Hoppou",
+					thumbnail: "avatars/subcom/timbs-hoppou.jpg",
+					url: "https://hifi-makers.s3.amazonaws.com/subcom/Diviy/Working%20exports%20only/Timbs%20hoppou5/Timbs%20hoppou4.fst"
+				},
+				{
+					name: "Sweater Dress",
+					thumbnail: "avatars/subcom/sweater-dress.jpg",
+					url: "https://hifi-makers.s3.amazonaws.com/subcom/Diviy/Working%20exports%20only/sweater%20dress10/sweater%20dress10.fst"
+				},
+				{
+					name: "Lilith",
+					thumbnail: "avatars/subcom/lilith.jpg",
+					url: "https://hifi-makers.s3.amazonaws.com/subcom/LittleMouse/HF%20-%20Lilith%202%20fixed%20emit%20transparency%20NO%20PSD/HF%20-%20Lilith%202%20fixed%20emit%20transparency%20NO%20PSD.fst"
+				},
+				{
+					name: "Luna Fox",
+					thumbnail: "avatars/subcom/luna-fox.jpg",
+					url: "https://hifi-makers.s3.amazonaws.com/subcom/LittleMouse/HF%20Luna%20Fox%20EM%20FINAL/HF%20Luna%20Fox%20EM%20FINAL.fst"
+				},
+			]
 		},
-		// {
-		// 	name: "<img src='avatars/subcom.svg' style='height: 40px'/>",
-		// 	avatars: [
-		// 		{
-		// 			name: "Daven Atlanta",
-		// 			thumbnail: "avatars/subcom/daven-atlanta.jpg",
-		// 			url: "https://hifi-makers.s3.amazonaws.com/subcom/LittleMouse/HF%20Daven%20Atlanta%20Atlas/HF%20Daven%20Atlanta%20Atlas.fst"
-		// 		},
-		// 		{
-		// 			name: "Witch",
-		// 			thumbnail: "avatars/subcom/witch.jpg",
-		// 			url: "https://hifi-makers.s3.amazonaws.com/subcom/LittleMouse/HF%20-%20Witch/HF%20-%20Witch.fst"
-		// 		},
-		// 		{
-		// 			name: "Gangstar Sleeveless",
-		// 			thumbnail: "avatars/subcom/gangstar-sleeveless.jpg",
-		// 			url: "https://hifi-makers.s3.amazonaws.com/subcom/LittleMouse/HF%20-%20Gangstar%20Sleeveless%20Finger%20Fix/HF%20-%20Gangstar%20Sleeveless%20Finger%20Fix.fst"
-		// 		},
-		// 		{
-		// 			name: "Wolfy",
-		// 			thumbnail: "avatars/subcom/wolfy.jpg",
-		// 			url: "https://hifi-makers.s3.amazonaws.com/subcom/Diviy/Working%20exports%20only/wolfy2/wolfy2.fst"
-		// 		},
-		// 		{
-		// 			name: "Cute Converse",
-		// 			thumbnail: "avatars/subcom/cute-converse.jpg",
-		// 			url: "https://hifi-makers.s3.amazonaws.com/subcom/Diviy/Working%20exports%20only/cute%20convers4/cute%20convers4.fst"
-		// 		},
-		// 		{
-		// 			name: "Wolf Trap Tanooki",
-		// 			thumbnail: "avatars/subcom/wolf-trap-tanooki.jpg",
-		// 			url: "https://hifi-makers.s3.amazonaws.com/subcom/LittleMouse/HF%20Wolf%20Trap%20-%20Tanooki%20atlas%20-%20weight%20painting%20fix/HF%20Wolf%20Trap%20-%20Tanooki%20atlas%20-%20weight%20painting%20fix.fst"
-		// 		},
-		// 		{
-		// 			name: "Emo Wolf Boy",
-		// 			thumbnail: "avatars/subcom/emo-wolf-boy.jpg",
-		// 			url: "https://hifi-makers.s3.amazonaws.com/subcom/LittleMouse/HF%20Emo%20Wolf%20Boy%20Finger%20Fixed/HF%20Emo%20Wolf%20Boy%20Finger%20Fixed.fst"
-		// 		},
-		// 		{
-		// 			name: "Goth Ooka",
-		// 			thumbnail: "avatars/subcom/goth-ooka.jpg",
-		// 			url: "https://hifi-makers.s3.amazonaws.com/subcom/Diviy/Working%20exports%20only/goth%20ooka6/goth%20ooka6.fst"
-		// 		},
-		// 		{
-		// 			name: "Teen Neko",
-		// 			thumbnail: "avatars/subcom/teen-neko.jpg",
-		// 			url: "https://hifi-makers.s3.amazonaws.com/subcom/Diviy/Working%20exports%20only/teen%20neko5/teen%20neko5.fst"
-		// 		},
-		// 		{
-		// 			name: "Headphone Wolfy",
-		// 			thumbnail: "avatars/subcom/headphone-wolfy.jpg",
-		// 			url: "https://hifi-makers.s3.amazonaws.com/subcom/Diviy/Working%20exports%20only/headphone%20wolfy%207/headphone%20wolfy%207.fst"
-		// 		},
-		// 		{
-		// 			name: "Azuma Lim",
-		// 			thumbnail: "avatars/subcom/azuma-lim.jpg",
-		// 			url: "https://hifi-makers.s3.amazonaws.com/subcom/LittleMouse/Azuma%20Lim%20edit%20by%20Subcom%20Finger%20Edit/Azuma%20Lim%20edit%20by%20Subcom%20Finger%20Edit.fst"
-		// 		},
-		// 		{
-		// 			name: "Timbs Hoppou",
-		// 			thumbnail: "avatars/subcom/timbs-hoppou.jpg",
-		// 			url: "https://hifi-makers.s3.amazonaws.com/subcom/Diviy/Working%20exports%20only/Timbs%20hoppou5/Timbs%20hoppou4.fst"
-		// 		},
-		// 		{
-		// 			name: "Sweater Dress",
-		// 			thumbnail: "avatars/subcom/sweater-dress.jpg",
-		// 			url: "https://hifi-makers.s3.amazonaws.com/subcom/Diviy/Working%20exports%20only/sweater%20dress10/sweater%20dress10.fst"
-		// 		},
-		// 		{
-		// 			name: "Lilith",
-		// 			thumbnail: "avatars/subcom/lilith.jpg",
-		// 			url: "https://hifi-makers.s3.amazonaws.com/subcom/LittleMouse/HF%20-%20Lilith%202%20fixed%20emit%20transparency%20NO%20PSD/HF%20-%20Lilith%202%20fixed%20emit%20transparency%20NO%20PSD.fst"
-		// 		},
-		// 		{
-		// 			name: "Luna Fox",
-		// 			thumbnail: "avatars/subcom/luna-fox.jpg",
-		// 			url: "https://hifi-makers.s3.amazonaws.com/subcom/LittleMouse/HF%20Luna%20Fox%20EM%20FINAL/HF%20Luna%20Fox%20EM%20FINAL.fst"
-		// 		},
-		// 	]
-		// },
 		{
 			name: "<img src='avatars/memes.svg' style='height: 40px'/>",
 			fontFamily: "'Comic Sans MS', 'Roboto', sans-serif",
