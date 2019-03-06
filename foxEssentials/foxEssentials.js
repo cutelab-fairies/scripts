@@ -329,6 +329,10 @@ function webEventReceived(json) {
 			if (json.value==undefined) break;
 			spawnEntityJSON(json.value);
 		break;
+
+		case "getCreatePermissions":
+			emitEvent("getCreatePermissions", (Entities.canRez()||Entities.canRezTmp()));
+		break;
 	}
 }
 

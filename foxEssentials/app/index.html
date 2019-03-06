@@ -318,8 +318,9 @@
 				// update page, close sidebar and other pages
 				if (window.qt) {
 					switch (selectedPage) {
-						case "settings": emitEvent("updateSettings"); break; 
 						case "scripts": emitEvent("updateScripts"); break; 
+						case "entities": emitEvent("getCreatePermissions"); break; 
+						case "settings": emitEvent("updateSettings"); break; 
 					}
 				}
 
@@ -452,6 +453,15 @@
 									setClassToEl(
 										document.querySelector("#scripts-"+filename+" .checkbox"),
 										"active", scriptsEnabled[filename]);
+								});
+							break;
+							case "getCreatePermissions":
+								window.createPermissions = json.value;
+
+								document.querySelectorAll("#entities #collapse").forEach(element=>{
+									element.setAttribute("disabled", 
+										!(element.getAttribute("avatar")=="true"||window.createPermissions)
+									);
 								});
 							break;
 						}

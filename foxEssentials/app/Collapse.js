@@ -52,6 +52,7 @@ function Collapse(title, content, styles) { // returns el
 	// }
 	
 	table.addEventListener("click", ()=>{
+		if (collapse.getAttribute("disabled")=="true") return;
 		if (this.collapsed) {
 			this.open();
 		} else {

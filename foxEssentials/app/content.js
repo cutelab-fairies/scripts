@@ -319,6 +319,7 @@ var content = {
 	entities: [
 		{
 			name: "<img src='entities/cute-things.svg' style='height: 50px'/>",
+			avatar: true,
 			fontFamily: "'Dudu Caligraphy', 'Roboto', sans-serif",
 			entities: [
 				{
@@ -429,6 +430,7 @@ var content = {
 		},
 		{
 			name: "<img src='entities/world-building.svg' style='height: 50px'/>",
+			avatar: false,
 			entities: [
 				{
 					name: "Tip Jar",
@@ -615,6 +617,7 @@ var content = {
 		},
 		{
 			name: "<img src='entities/shaders.svg' style='height: 50px'/>",
+			avatar: false,
 			entities: [
 				{
 					name: "Portal",
@@ -809,7 +812,9 @@ content.entities.forEach(category=>{
 		div.appendChild(entityEl);
 	});
 
-	document.getElementById("entities").appendChild(new Collapse(category.name, div));
+	var collapse = new Collapse(category.name, div);
+	collapse.setAttribute("avatar", category.avatar?true:false);
+	document.getElementById("entities").appendChild(collapse);
 });
 
 let deleteLastSpawnedEntityButton = document.createElement("div");

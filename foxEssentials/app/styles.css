@@ -233,6 +233,10 @@ body {
 	display: none;
 }
 
+#collapse[disabled="true"] {
+	opacity: 0.4;
+}
+
 #image-selector {
 	display: inline-block;
 	vertical-align: top;
