@@ -96,21 +96,23 @@ function deleteLastSpawnedEntity() {
 
 function changeSetting(key, value) {
 	var somethingChanged = true;
-
+	
 	switch (key) {
 		case "disableWorldCollisions":
-			//var newCollisionsEnabled = (value!=undefined)? value: !MyAvatar.getCollisionsEnabled();
-			//Settings.setValue("cat.maki.foxEssentials.collisionsEnabled", newCollisionsEnabled);
+			var newCollisionsEnabled = (value!=undefined)? !value: !MyAvatar.getCollisionsEnabled();
+			console.log("\n\n\n\n\n\n\n\nnewCollisionsEnabled: "+value+", "+newCollisionsEnabled);
+			Settings.setValue("cat.maki.foxEssentials.disableWorldCollisions", !newCollisionsEnabled);
 
-			MyAvatar.setCollisionsEnabled(!MyAvatar.getCollisionsEnabled());
-			overrideSomethingChanged = true;
+			MyAvatar.setCollisionsEnabled(newCollisionsEnabled);
+			somethingChanged = false;
 		break;
 		case "disableAvatarCollisions":
-			//var newCollisionsEnabled = (value!=undefined)? value: !MyAvatar.getCollisionsEnabled();
-			//Settings.setValue("cat.maki.foxEssentials.collisionsEnabled", newCollisionsEnabled);
+			var newOtherAvatarsCollisionsEnabled = (value!=undefined)? !value: !MyAvatar.getOtherAvatarsCollisionsEnabled();
+			console.log("\n\n\n\n\n\n\n\nnewOtherAvatarsCollisionsEnabled: "+value+", "+newOtherAvatarsCollisionsEnabled);
+			Settings.setValue("cat.maki.foxEssentials.disableAvatarCollisions", !newCollisionsEnabled);
 
-			MyAvatar.setOtherAvatarsCollisionsEnabled(!MyAvatar.getOtherAvatarsCollisionsEnabled());
-			overrideSomethingChanged = true;
+			MyAvatar.setOtherAvatarsCollisionsEnabled(newOtherAvatarsCollisionsEnabled);
+			somethingChanged = false;
 		break;
 		case "enableFlying":
 			var flyingEnabled = MyAvatar.getFlyingEnabled();
@@ -345,6 +347,7 @@ function buttonClicked() {
 function getValueAndChangeSetting(key) {
 	var value = Settings.getValue("cat.maki.foxEssentials."+key);
 	if (value == undefined) return;
+	//console.log(key+","+value)
 	changeSetting(key, value);
 }
 
@@ -352,8 +355,11 @@ getValueAndChangeSetting("disableAntiAliasing");
 getValueAndChangeSetting("disableTrackingSmoothing");
 getValueAndChangeSetting("enableFilmicToneMapping");
 
+getValueAndChangeSetting("disableWorldCollisions");
+getValueAndChangeSetting("disableAvatarCollisions");
+
 function collisionsEnabledChanged(enabled) { updateSettings({disableWorldCollisions: !enabled}); }
-function otherAvatarsCollisionsEnabledChanged(enabled) { updateSettings({disableAvatarsCollisions: !enabled}); }
+function otherAvatarsCollisionsEnabledChanged(enabled) { updateSettings({disableAvatarCollisions: !enabled}); }
 function scaleChanged() { updateSettings(); }
 function scriptCountChanged() { updateScripts(); }
 
