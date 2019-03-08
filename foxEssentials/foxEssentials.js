@@ -346,7 +346,7 @@ function buttonClicked() {
 // init
 function getValueAndChangeSetting(key) {
 	var value = Settings.getValue("cat.maki.foxEssentials."+key);
-	if (value == undefined) return;
+	if (value==="") return;
 	//console.log(key+","+value)
 	changeSetting(key, value);
 }
