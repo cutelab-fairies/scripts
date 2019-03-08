@@ -96,11 +96,11 @@ function deleteLastSpawnedEntity() {
 
 function changeSetting(key, value) {
 	var somethingChanged = true;
-	
+
 	switch (key) {
 		case "disableWorldCollisions":
 			var newCollisionsEnabled = (value!=undefined)? !value: !MyAvatar.getCollisionsEnabled();
-			console.log("\n\n\n\n\n\n\n\nnewCollisionsEnabled: "+value+", "+newCollisionsEnabled);
+			//console.log("\n\n\n\n\n\n\n\nnewCollisionsEnabled: "+value+", "+newCollisionsEnabled);
 			Settings.setValue("cat.maki.foxEssentials.disableWorldCollisions", !newCollisionsEnabled);
 
 			MyAvatar.setCollisionsEnabled(newCollisionsEnabled);
@@ -108,7 +108,7 @@ function changeSetting(key, value) {
 		break;
 		case "disableAvatarCollisions":
 			var newOtherAvatarsCollisionsEnabled = (value!=undefined)? !value: !MyAvatar.getOtherAvatarsCollisionsEnabled();
-			console.log("\n\n\n\n\n\n\n\nnewOtherAvatarsCollisionsEnabled: "+value+", "+newOtherAvatarsCollisionsEnabled);
+			//console.log("\n\n\n\n\n\n\n\nnewOtherAvatarsCollisionsEnabled: "+value+", "+newOtherAvatarsCollisionsEnabled);
 			Settings.setValue("cat.maki.foxEssentials.disableAvatarCollisions", !newCollisionsEnabled);
 
 			MyAvatar.setOtherAvatarsCollisionsEnabled(newOtherAvatarsCollisionsEnabled);
