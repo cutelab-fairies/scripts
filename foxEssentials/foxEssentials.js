@@ -227,6 +227,18 @@ function changeSetting(key, value) {
 			Render.getConfig("RenderMainView.ToneMapping")["curve"] = (newEnableFilmicToneMapping)? 3: 1;
 		break;
 
+		case "forceHighLOD":
+			var newForceHighLOD = (value!=undefined)? value: !Settings.getValue("cat.maki.foxEssentials.forceHighLOD");
+			Settings.setValue("cat.maki.foxEssentials.forceHighLOD", newForceHighLOD);
+
+			if (newForceHighLOD) {
+				LODManager.setAutomaticLODAdjust(false);
+				LODManager.setOctreeSizeScale(65536000);
+			} else {
+				LODManager.setAutomaticLODAdjust(true);
+			}
+		break;
+
 		default: somethingChanged = false; break;
 	}
 
@@ -286,6 +298,7 @@ function updateSettings(override) {
 		
 		disableAntiAliasing: (Settings.getValue("cat.maki.foxEssentials.disableAntiAliasing"))? true: false,
 		enableFilmicToneMapping: (Settings.getValue("cat.maki.foxEssentials.enableFilmicToneMapping"))? true: false,
+		forceHighLOD: (Settings.getValue("cat.maki.foxEssentials.forceHighLOD"))? true: false,
 	})
 }
 
@@ -354,6 +367,7 @@ function getValueAndChangeSetting(key) {
 getValueAndChangeSetting("disableAntiAliasing");
 getValueAndChangeSetting("disableTrackingSmoothing");
 getValueAndChangeSetting("enableFilmicToneMapping");
+getValueAndChangeSetting("forceHighLOD");
 
 getValueAndChangeSetting("disableWorldCollisions");
 getValueAndChangeSetting("disableAvatarCollisions");

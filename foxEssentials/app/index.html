@@ -115,6 +115,10 @@
 							<td class="checkbox"></td>
 							<td><h2 style="margin-left:8px"><svg class="icon" viewBox="0 0 24 24"><path d="M18 4V3c0-.55-.45-1-1-1H5c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1h12c.55 0 1-.45 1-1V6h1v4H9v11c0 .55.45 1 1 1h2c.55 0 1-.45 1-1v-9h8V4h-3z"/></svg> enable filmic tone mapping</h2></td>
 						</tr>
+						<tr class="pointer" id="settings-forceHighLOD">
+							<td class="checkbox"></td>
+							<td><h2 style="margin-left:8px"><svg class="icon" viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg> force high level of detail</h2></td>
+						</tr>
 					</table>
 				</div>
 				<br>
@@ -165,6 +169,7 @@
 						// graphics
 						{id:"disableAntiAliasing", event:"click", callback:()=>{changeSetting("disableAntiAliasing")}},
 						{id:"enableFilmicToneMapping", event:"click", callback:()=>{changeSetting("enableFilmicToneMapping")}},
+						{id:"forceHighLOD", event:"click", callback:()=>{changeSetting("forceHighLOD")}},
 					].forEach(setting=>{
 
 						document.getElementById("settings-"+setting.id).addEventListener(setting.event, setting.callback);
@@ -400,31 +405,26 @@
 
 						switch (json.key) {
 							case "updateSettings":
-								setClassToEl(
-									document.querySelector("#settings-disableWorldCollisions .checkbox"),
-									"active", json.value.disableWorldCollisions);
-								setClassToEl(
-									document.querySelector("#settings-disableAvatarCollisions .checkbox"),
-									"active", json.value.disableAvatarCollisions);
-								setClassToEl(
-									document.querySelector("#settings-enableFlying .checkbox"),
-									"active", json.value.enableFlying);
+								function updateSettingCheckbox(key, value) {
+									setClassToEl(
+										document.querySelector("#settings-"+key+" .checkbox"),
+										"active", value);
+								}
+
+								updateSettingCheckbox("disableWorldCollisions", json.value.disableWorldCollisions);
+								updateSettingCheckbox("disableAvatarCollisions", json.value.disableAvatarCollisions);
+								updateSettingCheckbox("enableFlying", json.value.enableFlying);
 
 								document.getElementById("settings-sizeNumber").value = json.value.sizeNumber;
 								document.getElementById("settings-speedNumber").value = json.value.speedNumber;
 
 								document.getElementById("settings-displayName").value = json.value.displayName;
 
-								setClassToEl(
-									document.querySelector("#settings-disableTrackingSmoothing .checkbox"),
-									"active", json.value.disableTrackingSmoothing);
+								updateSettingCheckbox("disableTrackingSmoothing", json.value.disableTrackingSmoothing);
 								
-								setClassToEl(
-									document.querySelector("#settings-disableAntiAliasing .checkbox"),
-									"active", json.value.disableAntiAliasing);
-								setClassToEl(
-									document.querySelector("#settings-enableFilmicToneMapping .checkbox"),
-									"active", json.value.enableFilmicToneMapping);
+								updateSettingCheckbox("disableAntiAliasing", json.value.disableAntiAliasing);
+								updateSettingCheckbox("enableFilmicToneMapping", json.value.enableFilmicToneMapping);
+								updateSettingCheckbox("forceHighLOD", json.value.forceHighLOD);
 							break;
 							case "updateScripts":
 								let scriptsEnabled = {};
