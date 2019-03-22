@@ -239,6 +239,20 @@ function changeSetting(key, value) {
 			}
 		break;
 
+		case "resetCreateToolsPositionSize":
+			var newValue = {
+				position:{x:32,y:64},
+				size:{x:512,y:768}
+			};
+
+			Settings.setValue("com.highfidelity.create.createToolsWindow", newValue);
+			newValue.position.x += 512+32;
+			Settings.setValue("com.highfidelity.create.entityListWindow", newValue);
+
+			ScriptDiscoveryService.stopScript("file:///~//defaultScripts.js");
+			ScriptDiscoveryService.loadScript("file:///~//defaultScripts.js");
+		break;
+
 		default: somethingChanged = false; break;
 	}
 
@@ -308,6 +322,10 @@ function updateScripts() {
 	}))
 }
 
+function updateCreatePermissions() {
+	emitEvent("getCreatePermissions", (Entities.canRez()||Entities.canRezTmp()));
+}
+
 function webEventReceived(json) {
 	try { json = JSON.parse(json);
 	} catch(err) { return; }
@@ -346,7 +364,7 @@ function webEventReceived(json) {
 		break;
 
 		case "getCreatePermissions":
-			emitEvent("getCreatePermissions", (Entities.canRez()||Entities.canRezTmp()));
+			updateCreatePermissions();
 		break;
 	}
 }

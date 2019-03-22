@@ -98,7 +98,7 @@
 					</table>
 					<table cellspacing="8px">
 						<tr class="pointer">
-							<td class="button" id="settings-fixPointerPosition"><svg class="icon" 4px;" viewBox="0 0 24 24"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg> fix pointer position</td>
+							<td class="button" id="settings-fixPointerPosition"><svg class="icon" viewBox="0 0 24 24"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg> fix pointer position</td>
 						</tr>
 					</table>
 				</div>
@@ -118,6 +118,16 @@
 						<tr class="pointer" id="settings-forceHighLOD">
 							<td class="checkbox"></td>
 							<td><h2 style="margin-left:8px"><svg class="icon" viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg> force high level of detail</h2></td>
+						</tr>
+					</table>
+				</div>
+				<br>
+				<h1>interface</h1>
+				<br>
+				<div style="margin-left: 16px;">
+					<table cellspacing="8px">
+						<tr class="pointer">
+							<td class="button" id="settings-resetCreateToolsPositionSize"><svg class="icon" viewBox="0 0 24 24"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg> reset create tools position/size</td>
 						</tr>
 					</table>
 				</div>
@@ -170,6 +180,8 @@
 						{id:"disableAntiAliasing", event:"click", callback:()=>{changeSetting("disableAntiAliasing")}},
 						{id:"enableFilmicToneMapping", event:"click", callback:()=>{changeSetting("enableFilmicToneMapping")}},
 						{id:"forceHighLOD", event:"click", callback:()=>{changeSetting("forceHighLOD")}},
+						// interface
+						{id:"resetCreateToolsPositionSize", event:"click", callback:()=>{changeSetting("resetCreateToolsPositionSize")}},
 					].forEach(setting=>{
 
 						document.getElementById("settings-"+setting.id).addEventListener(setting.event, setting.callback);

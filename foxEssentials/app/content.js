@@ -249,7 +249,7 @@ var content = {
 			logoOffset: 20,
 			background: "worlds/portalarium-bg.jpg",
 			description: "A calm, cozy and peaceful camp ground with teleporters.",
-			address: "hifi://portalarium",
+			address: "hifi://caitlyn",
 		},
 		{
 			name: "Maker",
@@ -317,6 +317,23 @@ var content = {
 		},
 	],
 	entities: [
+		// {
+		// 	name: "Things",
+		// 	avatar: true,
+		// 	entities: [
+		// 		{
+		// 			name: "Sofa",
+		// 			thumbnail: "",
+		// 			json: [{
+		// 				name: "Sofa",
+		// 				type: "Model",
+		// 				modelURL: "http://mpassets.highfidelity.com/e79aada0-070e-4e9e-ac8a-05bb8404c0c7-v1/ModernSofa_04.fbx",
+		// 				collisionless: true,
+		// 				grab: {grabbable: false, grabFollowsController: false},
+		// 			}],
+		// 		}
+		// 	]
+		// },
 		{
 			name: "<img src='entities/cute-things.svg' style='height: 50px'/>",
 			avatar: true,
