@@ -155,6 +155,7 @@ var content = {
 		},
 		{
 			name: "<img src='avatars/mmd-avatars-remixed-by-subcomvr.svg' style='height: 40px'/>",
+			note: "I don't know which licenses these avatars use. Take caution with any commercial use. I do not host or own them.",
 			avatars: [
 				{
 					name: "Daven Atlanta",
@@ -795,6 +796,12 @@ content.avatars.forEach(category=>{
 		document.getElementById("avatars").appendChild(collapse);
 	} else {	
 		let div = document.createElement("div");
+
+		let note = document.createElement("p");
+		note.innerHTML = category.note;
+		note.style.margin = "10px";
+		note.style.marginTop = "-10px";
+		div.appendChild(note);
 
 		category.avatars.forEach(avatar=>{
 			let avatarEl = document.createElement("a");
