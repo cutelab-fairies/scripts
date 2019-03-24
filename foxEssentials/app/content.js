@@ -153,7 +153,7 @@ var content = {
 				}
 			],
 		},
-		{
+		/*{
 			name: "<img src='avatars/mmd-avatars-remixed-by-subcomvr.svg' style='height: 40px'/>",
 			note: "I don't know which licenses these avatars use. Take caution with any commercial use. I do not host or own them.",
 			avatars: [
@@ -233,7 +233,7 @@ var content = {
 					url: "https://hifi-makers.s3.amazonaws.com/subcom/LittleMouse/HF%20Luna%20Fox%20EM%20FINAL/HF%20Luna%20Fox%20EM%20FINAL.fst"
 				},
 			]
-		},
+		},*/
 	],
 	worlds: [
 		// {
