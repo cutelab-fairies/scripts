@@ -16,6 +16,9 @@ var button = tablet.addButton({
 	sortOrder: 11
 });
 
+// im sorry, but you're unethically sending too much data
+Settings.setValue("UserActivityLoggerDisabled", true);
+
 var disableTrackingSmoothing = Controller.parseMapping(JSON.stringify({
 	name: "cat.maki.foxEssentials.disableTrackingSmoothing",
 	channels: ["LeftHand","RightHand","LeftFoot","RightFoot","Hips","Spine2","Head"].map(function(channel) {
