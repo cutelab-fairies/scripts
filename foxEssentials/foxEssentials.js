@@ -242,7 +242,7 @@ function changeSetting(key, value) {
 			}
 		break;
 
-		case "resetCreateToolsPositionSize":
+		case "resetCreateWindowPositionSize":
 			var newValue = {
 				position:{x:32,y:64},
 				size:{x:512,y:768}
