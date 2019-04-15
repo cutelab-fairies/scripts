@@ -104,7 +104,7 @@ var content = {
 		},
 		{
 			name: "<img src='avatars/avatardz.svg' style='height: 40px'/>",
-			address: "hifi://avatardz.space",
+			address: "hifi://mochi",
 		},
 		{
 			name: "<img src='avatars/memes.svg' style='height: 40px'/>",
@@ -660,8 +660,12 @@ var content = {
 	],
 	scripts: [
 		{
-			name: "general",
+			name: "nametags",
 			scripts: [
+				{
+					name: "<img src='scripts/maddersNametags.png' style='height: 50px'/>",
+					link: "https://hifi-utils.jollysoft.com/HiFiApps/MaddersNameTags/MaddersNameTags.js"
+				},
 				{
 					name: "<img src='scripts/makisNametags.svg' style='height: 30px'/>",
 					link: "https://hifi.maki.cat/client-scripts/makisNametags/makisNametags.js"
@@ -671,16 +675,27 @@ var content = {
 					link: "http://cdn.snail.rocks/scripting/customTags/tags.js",
 					extra: "<span style='color:#f44336; font-weight:700;'>This script might crash your interface!</span>"
 				},
+			]
+		},
+		{
+			name: "general",
+			scripts: [	
 				{
 					name: "<img src='scripts/makisPortals.svg' style='height: 70px'/>",
 					link: "https://hifi.maki.cat/client-scripts/makisPortals/makisPortals.js"
 				},
 				{
-					name: "<img src='scripts/portalDropper.svg' style='height: 30px'/>",
-					author: "FluffyJenkins",
-					itemName: "app-portalDropper.js",
-					itemId: "74fdb4d7-1f55-487c-b2c7-e63044059599",
+					name: "<img src='scripts/appreciate.svg' style='height: 40px'/>",
+					author: "High Fidelity",
+					itemName: "appreciate_app.js",
+					itemId: "47c37419-f418-4b1a-8951-f668d6f5e1ea",
 				},
+				// {
+				// 	name: "<img src='scripts/portalDropper.svg' style='height: 30px'/>",
+				// 	author: "FluffyJenkins",
+				// 	itemName: "app-portalDropper.js",
+				// 	itemId: "74fdb4d7-1f55-487c-b2c7-e63044059599",
+				// },
 			]
 		},
 		{
@@ -730,6 +745,10 @@ var content = {
 		{
 			name: "experimental",
 			scripts: [
+				{
+					name: "<img src='scripts/whereAreMyFriends.svg' style='height: 40px'/>",
+					link: "https://hifi.maki.cat/client-scripts/whereAreMyFriends/whereAreMyFriends.js",
+				},
 				{
 					name: "<h2>Grab Me</h2>",
 					author: "Maki",
