@@ -746,6 +746,10 @@ var content = {
 			name: "experimental",
 			scripts: [
 				{
+					name: "<h2>Maki's Pretty Nametags</h2>",
+					link: "https://hifi.maki.cat/client-scripts/makisPrettyNametags/makisPrettyNametags.js",
+				},
+				{
 					name: "<img src='scripts/whereAreMyFriends.svg' style='height: 40px'/>",
 					link: "https://hifi.maki.cat/client-scripts/whereAreMyFriends/whereAreMyFriends.js",
 				},
