@@ -142,6 +142,16 @@ var content = {
 			fontFamily: "'Comic Sans MS', 'Roboto', sans-serif",
 			avatars: [
 				{
+					name: "crusader tin",
+					thumbnail: "avatars/bigtin/crusader-tin.jpg",
+					url: "https://hotmilk.space/bigtin/crusader-tin.fst"
+				},
+				{
+					name: "lady tin",
+					thumbnail: "avatars/bigtin/lady-tin.jpg",
+					url: "https://hotmilk.space/bigtin/lady-tin.fst"
+				},
+				{
 					name: "ameritin",
 					thumbnail: "avatars/bigtin/ameritin.jpg",
 					url: "https://hotmilk.space/bigtin/ameritin.fst"
