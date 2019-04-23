@@ -762,11 +762,11 @@ var content = {
 			scripts: [
 				{
 					name: "<h2>Maki's Pretty Nametags</h2>",
-					link: "https://hifi.maki.cat/client-scripts/makisPrettyNametags/makisPrettyNametags.js?2",
+					link: "https://hifi.maki.cat/client-scripts/makisPrettyNametags/makisPrettyNametags.js?4",
 				},
 				{
 					name: "<h2>Maki's Littlefox Nametags</h2>",
-					link: "https://hifi.maki.cat/client-scripts/makisPrettyNametags/makisLittlefoxNametags.js?2",
+					link: "https://hifi.maki.cat/client-scripts/makisPrettyNametags/makisLittlefoxNametags.js?4",
 				},
 				{
 					name: "<img src='scripts/whereAreMyFriends.svg' style='height: 40px'/>",
