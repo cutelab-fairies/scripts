@@ -111,6 +111,11 @@ var content = {
 			fontFamily: "'Comic Sans MS', 'Roboto', sans-serif",
 			avatars: [
 				{
+					name: "agent smith",
+					thumbnail: "avatars/memes/agent-smith.jpg",
+					url: "https://hotmilk.space/memes/agent-smith.fst"
+				},
+				{
 					name: "kanna",
 					thumbnail: "avatars/memes/kanna.jpg",
 					url: "https://hotmilk.space/memes/kanna.fst"
@@ -758,6 +763,10 @@ var content = {
 				{
 					name: "<h2>Maki's Pretty Nametags</h2>",
 					link: "https://hifi.maki.cat/client-scripts/makisPrettyNametags/makisPrettyNametags.js",
+				},
+				{
+					name: "<h2>Maki's Littlefox Nametags</h2>",
+					link: "https://hifi.maki.cat/client-scripts/makisPrettyNametags/makisLittlefoxNametags.js",
 				},
 				{
 					name: "<img src='scripts/whereAreMyFriends.svg' style='height: 40px'/>",
