@@ -81,9 +81,9 @@ var content = {
 			fontFamily: "'Dudu Caligraphy', 'Roboto', sans-serif",
 			avatars: [
 				{
-					name: "tsukinoko",
-					thumbnail: "avatars/cutelab/tsukinoko.jpg",
-					url: "https://hotmilk.space/cutelab/tsukinoko.fst"
+					name: "tsuchinoko",
+					thumbnail: "avatars/cutelab/tsuchinoko.jpg",
+					url: "https://hotmilk.space/cutelab/tsuchinoko.fst"
 				},
 				{
 					name: "lumpy space princess",
