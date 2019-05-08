@@ -81,6 +81,11 @@ var content = {
 			fontFamily: "'Dudu Caligraphy', 'Roboto', sans-serif",
 			avatars: [
 				{
+					name: "tsukinoko",
+					thumbnail: "avatars/cutelab/tsukinoko.jpg",
+					url: "https://hotmilk.space/cutelab/tsukinoko.fst"
+				},
+				{
 					name: "lumpy space princess",
 					thumbnail: "avatars/cutelab/lsp.jpg",
 					url: "https://hifi.maki.cat/avatars/lsp.fst"
@@ -91,15 +96,15 @@ var content = {
 					url: "https://hotmilk.space/cutelab/elaine.fst"
 				},
 				{
+					name: "kizuna ai",
+					thumbnail: "avatars/cutelab/kizuna-ai.jpg",
+					url: "https://hotmilk.space/cutelab/kizuna-ai.fst"
+				},
+				{
 					name: "cirno",
 					thumbnail: "avatars/cutelab/cirno.jpg",
 					url: "https://hotmilk.space/cutelab/cirno.fst"
 				},
-				{
-					name: "kizuna ai",
-					thumbnail: "avatars/cutelab/kizuna-ai.jpg",
-					url: "https://hotmilk.space/cutelab/kizuna-ai.fst"
-				}
 			]
 		},
 		{
