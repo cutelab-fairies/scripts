@@ -148,6 +148,36 @@ var content = {
 			],
 		},
 		{
+			name: "<img src='avatars/morags-avatars.svg' style='height: 60px'/>",
+			avatars: [
+				{
+					name: "Bunny",
+					thumbnail: "avatars/morags-avatars/bunny.jpg",
+					url: "http://www.lag0matic.com/avatar/bunny/avatar.fst"
+				},
+				{
+					name: "Hoppou",
+					thumbnail: "avatars/morags-avatars/hoppou.jpg",
+					url: "http://www.lag0matic.com/avatar/hoppou/avatar.fst"
+				},
+				{
+					name: "Noppou",
+					thumbnail: "avatars/morags-avatars/noppou.jpg",
+					url: "http://www.lag0matic.com/avatar/noppou/avatar.fst"
+				},
+				{
+					name: "Rwby",
+					thumbnail: "avatars/morags-avatars/rwby.jpg",
+					url: "http://www.lag0matic.com/avatar/rwby/avatar.fst"
+				},
+				{
+					name: "Tokiko",
+					thumbnail: "avatars/morags-avatars/tokiko.jpg",
+					url: "http://www.lag0matic.com/avatar/tokiko/avatar.fst"
+				}
+			]
+		},
+		{
 			name: "<img src='avatars/bigtin-avatars.svg' style='height: 60px'/>",
 			fontFamily: "'Comic Sans MS', 'Roboto', sans-serif",
 			avatars: [
@@ -179,77 +209,77 @@ var content = {
 			avatars: [
 				{
 					name: "Daven Atlanta",
-					thumbnail: "avatars/mmd-avatars-remixed-by-subcomvr/daven-atlanta.jpg",
+					thumbnail: "avatars/quality-mmd-rips/daven-atlanta.jpg",
 					url: "https://2.hotmilk.space/LittleMouse/HF%20Daven%20Atlanta%20Atlas/HF%20Daven%20Atlanta%20Atlas.fst"
 				},
 				{
 					name: "Witch",
-					thumbnail: "avatars/mmd-avatars-remixed-by-subcomvr/witch.jpg",
+					thumbnail: "avatars/quality-mmd-rips/witch.jpg",
 					url: "https://2.hotmilk.space/LittleMouse/HF%20-%20Witch/HF%20-%20Witch.fst"
 				},
 				{
 					name: "Gangstar Sleeveless",
-					thumbnail: "avatars/mmd-avatars-remixed-by-subcomvr/gangstar-sleeveless.jpg",
+					thumbnail: "avatars/quality-mmd-rips/gangstar-sleeveless.jpg",
 					url: "https://2.hotmilk.space/LittleMouse/HF%20-%20Gangstar%20Sleeveless%20Finger%20Fix/HF%20-%20Gangstar%20Sleeveless%20Finger%20Fix.fst"
 				},
 				{
 					name: "Wolfy",
-					thumbnail: "avatars/mmd-avatars-remixed-by-subcomvr/wolfy.jpg",
+					thumbnail: "avatars/quality-mmd-rips/wolfy.jpg",
 					url: "https://2.hotmilk.space/Diviy/Working%20exports%20only/wolfy2/wolfy2.fst"
 				},
 				{
 					name: "Cute Converse",
-					thumbnail: "avatars/mmd-avatars-remixed-by-subcomvr/cute-converse.jpg",
+					thumbnail: "avatars/quality-mmd-rips/cute-converse.jpg",
 					url: "https://2.hotmilk.space/Diviy/Working%20exports%20only/cute%20convers4/cute%20convers4.fst"
 				},
 				{
 					name: "Wolf Trap Tanooki",
-					thumbnail: "avatars/mmd-avatars-remixed-by-subcomvr/wolf-trap-tanooki.jpg",
+					thumbnail: "avatars/quality-mmd-rips/wolf-trap-tanooki.jpg",
 					url: "https://2.hotmilk.space/LittleMouse/HF%20Wolf%20Trap%20-%20Tanooki%20atlas%20-%20weight%20painting%20fix/HF%20Wolf%20Trap%20-%20Tanooki%20atlas%20-%20weight%20painting%20fix.fst"
 				},
 				{
 					name: "Emo Wolf Boy",
-					thumbnail: "avatars/mmd-avatars-remixed-by-subcomvr/emo-wolf-boy.jpg",
+					thumbnail: "avatars/quality-mmd-rips/emo-wolf-boy.jpg",
 					url: "https://2.hotmilk.space/LittleMouse/HF%20Emo%20Wolf%20Boy%20Finger%20Fixed/HF%20Emo%20Wolf%20Boy%20Finger%20Fixed.fst"
 				},
 				{
 					name: "Goth Ooka",
-					thumbnail: "avatars/mmd-avatars-remixed-by-subcomvr/goth-ooka.jpg",
+					thumbnail: "avatars/quality-mmd-rips/goth-ooka.jpg",
 					url: "https://2.hotmilk.space/Diviy/Working%20exports%20only/goth%20ooka6/goth%20ooka6.fst"
 				},
 				{
 					name: "Teen Neko",
-					thumbnail: "avatars/mmd-avatars-remixed-by-subcomvr/teen-neko.jpg",
+					thumbnail: "avatars/quality-mmd-rips/teen-neko.jpg",
 					url: "https://2.hotmilk.space/Diviy/Working%20exports%20only/teen%20neko5/teen%20neko5.fst"
 				},
 				{
 					name: "Headphone Wolfy",
-					thumbnail: "avatars/mmd-avatars-remixed-by-subcomvr/headphone-wolfy.jpg",
+					thumbnail: "avatars/quality-mmd-rips/headphone-wolfy.jpg",
 					url: "https://2.hotmilk.space/Diviy/Working%20exports%20only/headphone%20wolfy%207/headphone%20wolfy%207.fst"
 				},
 				{
 					name: "Azuma Lim",
-					thumbnail: "avatars/mmd-avatars-remixed-by-subcomvr/azuma-lim.jpg",
+					thumbnail: "avatars/quality-mmd-rips/azuma-lim.jpg",
 					url: "https://2.hotmilk.space/LittleMouse/Azuma%20Lim%20edit%20by%20Subcom%20Finger%20Edit/Azuma%20Lim%20edit%20by%20Subcom%20Finger%20Edit.fst"
 				},
 				{
 					name: "Timbs Hoppou",
-					thumbnail: "avatars/mmd-avatars-remixed-by-subcomvr/timbs-hoppou.jpg",
+					thumbnail: "avatars/quality-mmd-rips/timbs-hoppou.jpg",
 					url: "https://2.hotmilk.space/Diviy/Working%20exports%20only/Timbs%20hoppou5/Timbs%20hoppou4.fst"
 				},
 				{
 					name: "Sweater Dress",
-					thumbnail: "avatars/mmd-avatars-remixed-by-subcomvr/sweater-dress.jpg",
+					thumbnail: "avatars/quality-mmd-rips/sweater-dress.jpg",
 					url: "https://2.hotmilk.space/Diviy/Working%20exports%20only/sweater%20dress10/sweater%20dress10.fst"
 				},
 				{
 					name: "Lilith",
-					thumbnail: "avatars/mmd-avatars-remixed-by-subcomvr/lilith.jpg",
+					thumbnail: "avatars/quality-mmd-rips/lilith.jpg",
 					url: "https://2.hotmilk.space/LittleMouse/HF%20-%20Lilith%202%20fixed%20emit%20transparency%20NO%20PSD/HF%20-%20Lilith%202%20fixed%20emit%20transparency%20NO%20PSD.fst"
 				},
 				{
 					name: "Luna Fox",
-					thumbnail: "avatars/mmd-avatars-remixed-by-subcomvr/luna-fox.jpg",
+					thumbnail: "avatars/quality-mmd-rips/luna-fox.jpg",
 					url: "https://2.hotmilk.space/LittleMouse/HF%20Luna%20Fox%20EM%20FINAL/HF%20Luna%20Fox%20EM%20FINAL.fst"
 				},
 			]
