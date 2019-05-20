@@ -81,6 +81,11 @@ var content = {
 			fontFamily: "'Dudu Caligraphy', 'Roboto', sans-serif",
 			avatars: [
 				{
+					name: "unity-chan",
+					thumbnail: "avatars/cutelab/unitychan.jpg",
+					url: "https://hotmilk.space/cutelab/unitychan.fst"
+				},
+				{
 					name: "tsuchinoko",
 					thumbnail: "avatars/cutelab/tsuchinoko.jpg",
 					url: "https://hotmilk.space/cutelab/tsuchinoko.fst"
