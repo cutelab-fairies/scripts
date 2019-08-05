@@ -740,6 +740,10 @@ var content = {
 					link: "https://hifi.maki.cat/client-scripts/makisPortals/makisPortals.js"
 				},
 				{
+					name: "<img src='scripts/sitOnSomeone.svg' style='height: 50px'/>",
+					link: "https://hifi.maki.cat/client-scripts/sitOnSomeone/sitOnSomeone.js"
+				},
+				{
 					name: "<img src='scripts/appreciate.svg' style='height: 40px'/>",
 					author: "High Fidelity",
 					itemName: "appreciate_app.js",
